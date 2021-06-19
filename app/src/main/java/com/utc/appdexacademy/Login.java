@@ -9,6 +9,7 @@ import android.os.Bundle;
  * Creado:
  * Editado:
  * Descripción:
+ * Prueba: Verificar si no se corrompe con dos ingresos
  * */
 public class Login extends AppCompatActivity {
 
