@@ -1,5 +1,14 @@
 package com.utc.appdexacademy;
 
+/*
+ * Autores: Vanesa Quishpe, Angel Tapia, Alex Vaca
+ * Creado: 18/06/2021
+ * Editado: 18/06/2021
+ * Descripción: Crear el login
+ *
+ * */
+
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
