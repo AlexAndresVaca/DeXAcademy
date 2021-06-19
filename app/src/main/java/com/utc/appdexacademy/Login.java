@@ -5,10 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 /*
- * Autores: Vanesa Quishpe, Angel Tapia, Alex Vaca
- * Creado: 18/06/2021
- * Editado: 18/06/2021
- * Descripción: Crear el login
+ * Autores:
+ * Creado:
+ * Editado:
+ * Descripción:
+ * Prueba: Probar si se corrompe
  * */
 public class Login extends AppCompatActivity {
 
