@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.lang.ref.Reference;
+
 public class BaseDatos extends SQLiteOpenHelper {
     //definiendo el nombre de la bdd
     private static final String nombreBdd = "bdd_dex_academy";
@@ -21,6 +23,16 @@ public class BaseDatos extends SQLiteOpenHelper {
             "clave_usu text ," +
             "telefono_usu text)";
 
+    //definiendo la estructura de la tabla inscripcion
+    private static final String tablaInscripcion = "CREATE TABLE inscripcion(" +
+            "id_ins integer PRIMARY KEY AUTOINCREMENT ," +
+            "codigo_unico_ins text ," +
+            "estado_aprobacion_ins text ," +
+            "estado_progreso_ins text ," +
+            "fk_id_curso integer," +
+            "'FOREINGKEY id_curso REFERENCES curso id_curso'," +
+            "fk_id_alu integer," +
+            "'FOREING KEY id_alu REFERENCES curso id_alu')";
 
     //CONSTRUCTOR
     public BaseDatos(Context contexto) {
@@ -32,6 +44,9 @@ public class BaseDatos extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         //ejecutando el query ddl para crear la tabla usuario con sus atributos
         db.execSQL(tablaUsuario);
+        //ejecutando el query ddl para crear la tabla usuario con sus atributos
+        db.execSQL(tablaInscripcion);
+
     }
 
     //PROCESO 2: Metodo que se ejecuta automaticamente cuando se detectan cambios en la versino con sus atributos
@@ -41,6 +56,10 @@ public class BaseDatos extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS usuario");
         //Ejecucion del codigo para crear la tabla usuario con su nueva estructura
         db.execSQL(tablaUsuario);
+        // Eliminacion de la version anterior de la tabla inscripcion
+        db.execSQL("DROP TABLE IF EXISTS inscripcion");
+        //Ejecucion del codigo para crear la tabla inscripcion con su nueva estructura
+        db.execSQL(tablaInscripcion);
     }
 
     // G E S T I O N    D E    U S U A R I O S
@@ -154,5 +173,72 @@ public class BaseDatos extends SQLiteOpenHelper {
         }
         return false; //retorna falso cuando no existe la bdd
     }
+
+
+    // G E S T I O N    D E    I N S C R I P C I Ó N
+    /*
+     * C => Create (agregarInscripcion)
+     * R => Read
+     * U => Update
+     * D => Delete
+     * */
+    // C R E A T E D
+    ///PROCESO 1: Metodo para insertar datos, retorna true cuando inserta y false cuando hay error
+    public boolean agregarInscripcion(String codigo, String estado_aprobacion, String estado_progreso, String curso, String alumno) {
+        SQLiteDatabase miBDD = getWritableDatabase(); //Llamando a la base de datos en el objeto miBDD
+        if (miBDD != null)//validando que la base de datos exista no sea nula
+        {
+            String sql = "INSERT INTO inscripcion (codigo_unico_ins, estado_aprobacion_ins, estado_progreso_ins, fk_id_cur , fk_id_alu) " +
+                    "VALUES ('" + codigo + "','" + estado_aprobacion + "','" + estado_progreso + "','" + curso + "','" + alumno + "')";
+            miBDD.execSQL(sql);
+            miBDD.close();
+            return true;
+        }
+        return false; //retorno cuando no exista la bdd
+    }
+    // R E A D
+    public Cursor listarInscripcion() {
+        SQLiteDatabase miBDD = getReadableDatabase(); //Llamando a la base de datos
+        String sql = "select * from inscripcion";
+        Cursor inscripcion = miBDD.rawQuery(sql, null);
+        if (inscripcion.moveToFirst()) {//verificando que el objeto usuario tenga resultados
+            return inscripcion; //retornamos datos encontrados
+        } else {
+            //Nose encuentra el usuario ..Porque no eexiste el email y congtrase{a
+            return null;
+        }
+
+    }
+    // U P D A T E
+    ///Metodo para actualizar la informacion personal del inscripcion
+    public boolean acualizarInscripcion(String id, String codigo, String estado_aprobacion, String estado_progreso) {
+        SQLiteDatabase miBdd = getWritableDatabase(); //objeto para manejar la base de datos
+        String sql = "UPDATE inscripcion SET " +
+                "codigo_unico_ins ='" + codigo + "', " +
+                "estado_aprobacion_ins ='" + estado_aprobacion + "', " +
+                "estado_progreso ='" + estado_progreso + "', " +
+                "WHERE id_ins=" + id;
+        if (miBdd != null) {
+            miBdd.execSQL(sql);
+            miBdd.close(); //cerrando la conexion con la bdd
+            return true; //regresando verdadero ya que el proceso d actualizacion fue exitosa
+        }
+        return false; //retorna falso cuando no existe la bdd
+    }
+    // D E L E T E
+    //Metodo para eliminar un registro de inscripcion
+    // Usar en caso emergente!!!
+    public boolean eliminarInscripcion(String id) {
+        SQLiteDatabase miBdd = getWritableDatabase(); //objeto para manejar la bdd
+        String sql = "DELETE FROM inscripcion WHERE id_ins=" + id;
+        if (miBdd != null) //validando que la bdd exista
+        {
+            miBdd.execSQL(sql); //ejecutar el query de eliminacion
+            miBdd.close(); //cerrando la conexion con la bdd
+            return true; //regresando verdadero ya que el proceso d actualizacion fue exitosa
+        }
+        return false; //retorna falso cuando no existe la bdd
+    }
+
 }
 
