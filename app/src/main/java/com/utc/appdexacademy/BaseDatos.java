@@ -1,4 +1,5 @@
 package com.utc.appdexacademy;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -6,18 +7,20 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class BaseDatos extends SQLiteOpenHelper {
     //definiendo el nombre de la bdd
-    private static final String nombreBdd = "bdd_usuarios_noveno_a";
+    private static final String nombreBdd = "bdd_dex_academy";
     // definiendo la version de la bdd
-    private static final int versionBdd = 3;
+    private static final int versionBdd = 1;
+    // T A B L A S
     //definiendo la estructura de la tabla usuario
-    private static final String tablaUsuario = "create table usuario(id_usu integer primary key autoincrement, apellido_usu text, nombre_usu text," +
-            " email_usu text, password_usu text)";
-    //definiendo la estructura de la tabla CLIENTE
-    private static final String tablaCliente = "create table cliente(id_cli integer primary key autoincrement," +
-            "cedula_cli text, apellido_cli text, nombre_cli text, telefono_cli text, direccion_cli text);";
-    //definiendo la estructura de la tabla PRODUCTO
-    private static final String tablaProducto = "create table producto(id_pro integer primary key autoincrement," +
-            "nombre_pro text, precio_pro DECIMAL (6,2), iva_pro INTEGER , stock_pro INTEGER, fechacaducidad_pro DATETIME);";
+    private static final String tablaUsuario = "CREATE TABLE usuario(" +
+            "id_usu integer PRIMARY KEY AUTOINCREMENT ," +
+            "apellido_usu text ," +
+            "nombre_usu text ," +
+            "tipo_usu text ," +
+            "correo_usu text ," +
+            "clave_usu text ," +
+            "telefono_usu text)";
+
 
     //CONSTRUCTOR
     public BaseDatos(Context contexto) {
@@ -29,10 +32,6 @@ public class BaseDatos extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         //ejecutando el query ddl para crear la tabla usuario con sus atributos
         db.execSQL(tablaUsuario);
-        //ejecutando el query ddl para crear la tabla Cliente con sus atributos
-        db.execSQL(tablaCliente);
-        //ejecutando el query ddl para crear la tabla Producto con sus atributos
-        db.execSQL(tablaProducto);
     }
 
     //PROCESO 2: Metodo que se ejecuta automaticamente cuando se detectan cambios en la versino con sus atributos
@@ -42,30 +41,60 @@ public class BaseDatos extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS usuario");
         //Ejecucion del codigo para crear la tabla usuario con su nueva estructura
         db.execSQL(tablaUsuario);
-        // Eliminacion de la version anterior de la tabla Cliente
-        db.execSQL("DROP TABLE IF EXISTS cliente");
-        //Ejecucion del codigo para crear la tabla Cliente con su nueva estructura
-        db.execSQL(tablaCliente);
-        // Eliminacion de la version anterior de la tabla Producto
-        db.execSQL("DROP TABLE IF EXISTS producto");
-        //Ejecucion del codigo para crear la tabla Producto con su nueva estructura
-        db.execSQL(tablaProducto);
     }
 
+    // G E S T I O N    D E    U S U A R I O S
+    /*
+     * C => Create (agregarUsuario)
+     * R => Read
+     * U => Update
+     * D => Delete
+     * */
+    // C R E A T E D
     ///PROCESO 3: Metodo para insertar datos, retorna tru cuando inserta y false cuando hay error
-    public boolean agregarUsuario(String apellido, String nombre, String email, String password) {
+    public boolean agregarUsuario(String apellido, String nombre, String tipo, String correo, String clave, String telefono) {
         SQLiteDatabase miBDD = getWritableDatabase(); //Llamando a la base de datos en el objeto miBDD
         if (miBDD != null)//validando que la base de datos exista no sea nula
         {
-            miBDD.execSQL("insert into usuario (apellido_usu, nombre_usu, email_usu, password_usu) " +
-                    "values ('" + apellido + "','" + nombre + "','" + email + "','" + password + "')");
+            String sql = "INSERT INTO usuario (apellido_usu, nombre_usu, tipo_usu, correo_usu, clave_usu, telefono_usu) " +
+                    "VALUES ('" + apellido + "','" + nombre + "','" + tipo + "','" + correo + "','" + clave + "','" + telefono + "')";
+            miBDD.execSQL(sql);
             miBDD.close();
             return true;
         }
         return false; //retorno cuando no exista la bdd
     }
 
-    //PROCESO 4: metodo para consultar por email y password
+    // R E A D
+    public Cursor listarUsuarios() {
+        SQLiteDatabase miBDD = getReadableDatabase(); //Llamando a la base de datos
+        String sql = "select * from usuario ";
+        Cursor usuario = miBDD.rawQuery(sql, null);
+        if (usuario.moveToFirst()) {//verificando que el objeto usuario tenga resultados
+            return usuario; //retornamos datos encontrados
+        } else {
+            //Nose encuentra el usuario ..Porque no eexiste el email y congtrase{a
+            return null;
+        }
+
+    }
+
+    // S E A R C H
+    // Buscar usuarios
+    public Cursor buscarUsuarios(String busqueda) {
+        SQLiteDatabase miBDD = getReadableDatabase(); //Llamando a la base de datos
+        String sql = "select * from usuario ";
+        Cursor usuario = miBDD.rawQuery(sql, null);
+        if (usuario.moveToFirst()) {//verificando que el objeto usuario tenga resultados
+            return usuario; //retornamos datos encontrados
+        } else {
+            //Nose encuentra el usuario ..Porque no eexiste el email y congtrase{a
+            return null;
+        }
+
+    }
+
+    //PROCESO 4: metodo para consultar por email y password (Login)
     public Cursor obtenerUsuarioporEmailPassword(String email, String password) {
         SQLiteDatabase miBDD = getWritableDatabase(); //Llamando a la base de datos
         Cursor usuario = miBDD.rawQuery("select * from usuario where " +
@@ -79,79 +108,47 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     }
 
-    ///PROCESO 5: Metodo para insertar datos de clientes dentro de la BDD
-    public boolean agregarCliente(String cedula, String apellido, String nombre, String telefono, String direccion)
-    {
-        SQLiteDatabase miBDD = getWritableDatabase(); //objeto para manejar la bdd
-        if (miBDD != null)//validando que la base de datos exista no sea nula
-        {
-            miBDD.execSQL("insert into cliente(cedula_cli, apellido_cli, nombre_cli,telefono_cli, direccion_cli) " +
-                    "values  ('" + cedula + "','" + apellido + "','" + nombre + "','" + telefono + "','" + direccion+ "')");
-            miBDD.close();
-            return true;
-        }
-        return false; //retorno cuando no exista la bdd
-    }
-    //PROCESO 6: metodo para consultar cliente existente en la BDD
-    public Cursor obtenerClientes() {
-        SQLiteDatabase miBDD = getWritableDatabase(); //Llamando a la base de datos
-        Cursor clientes = miBDD.rawQuery("select * from cliente;", null);
-        if (clientes.moveToFirst()) {//verificando que el objeto usuario tenga resultados
-            return clientes; //retornar el cursor que contiene el listado de cliente
-        } else {
-            //Nose encuentra el usuario ..Porque no eexiste el email y congtrase{a
-            return null;
-        }
-
-    }
-
-    ///PROCESO 7: Metodo para insertar datos de productos dentro de la BDD
-    public boolean agregarProducto(String nombre, double precio, int iva, int stock, String fechaCaducidad)
-    {
-        SQLiteDatabase miBDD = getWritableDatabase(); //objeto para manejar la bdd
-        if (miBDD != null)//validando que la base de datos exista no sea nula
-        {
-            miBDD.execSQL("insert into producto(nombre_pro, precio_pro, iva_pro,stock_pro, fechacaducidad_pro) " +
-                    "values  ('" + nombre + "','" + precio + "','" + iva + "','" + stock + "','" + fechaCaducidad+ "')");
-            miBDD.close();
-            return true;
-        }
-        return false; //retorno cuando no exista la bdd
-    }
-    //PROCESO 8: metodo para consultar producto existente en la BDD
-    public Cursor obtenerProducto() {
-        SQLiteDatabase miBDD = getWritableDatabase(); //Llamando a la base de datos
-        Cursor productos = miBDD.rawQuery("select * from producto;", null);
-        if (productos.moveToFirst()) {//verificando que el objeto producto tenga resultados
-            return productos; //retornar el cursor que contiene el listado de producto
-        } else {
-            //Nose encuentra el producto
-            return null;
-        }
-
-    }
-
-    ///Metodo para actualizar el registro del cliente
-    public boolean acualizarCliente(String cedula, String apellido, String nombre, String telefono, String direccion, String id)
-    {
+    // U P D A T E
+    ///Metodo para actualizar la informacion personal del usuario
+    public boolean acualizarCliente(String id, String apellido, String nombre, String correo, String telefono) {
         SQLiteDatabase miBdd = getWritableDatabase(); //objeto para manejar la base de datos
-        if(miBdd!= null)
-        {
-            miBdd.execSQL("update cliente set cedula_cli='"+cedula+"', " +
-                    "apellido_cli='"+apellido+"', nombre_cli='"+nombre+"', " +
-                    "telefono_cli='"+telefono+"',direccion_cli='"+direccion+"' where id_cli="+id);
+        String sql = "UPDATE usuario SET " +
+                "apellido_usu ='" + apellido + "', " +
+                "nombre_usu ='" + nombre + "', " +
+                "correo_usu ='" + correo + "', " +
+                "telefono_usu ='" + telefono + "', " +
+                "WHERE id_usu=" + id;
+        if (miBdd != null) {
+            miBdd.execSQL(sql);
             miBdd.close(); //cerrando la conexion con la bdd
             return true; //regresando verdadero ya que el proceso d actualizacion fue exitosa
         }
         return false; //retorna falso cuando no existe la bdd
     }
+
+    // Actualizar Clave
+    public boolean acualizarClave(String id, String nuevaClave) {
+        SQLiteDatabase miBdd = getWritableDatabase(); //objeto para manejar la base de datos
+        String sql = "UPDATE usuario SET " +
+                "clave_usu ='" + nuevaClave + "', " +
+                "WHERE id_usu=" + id;
+        if (miBdd != null) {
+            miBdd.execSQL(sql);
+            miBdd.close(); //cerrando la conexion con la bdd
+            return true; //regresando verdadero ya que el proceso d actualizacion fue exitosa
+        }
+        return false; //retorna falso cuando no existe la bdd
+    }
+
+    // D E L E T E
     //Metodo para eliminar un registro de clientes
-    public boolean eliminarCliente (String id)
-    {
+    // Usar en caso emergente!!!
+    public boolean eliminarCliente(String id) {
         SQLiteDatabase miBdd = getWritableDatabase(); //objeto para manejar la bdd
-        if(miBdd!= null) //validando que la bdd exista
+        String sql = "DELETE FROM usuario WHERE id_usu=" + id;
+        if (miBdd != null) //validando que la bdd exista
         {
-            miBdd.execSQL("delete from cliente where id_cli="+id); //ejecutar el query de eliminacion
+            miBdd.execSQL(sql); //ejecutar el query de eliminacion
             miBdd.close(); //cerrando la conexion con la bdd
             return true; //regresando verdadero ya que el proceso d actualizacion fue exitosa
         }
