@@ -8,7 +8,7 @@ import android.os.Bundle;
  * Autores: Vanesa Quishpe, Angel Tapia, Alex Vaca
  * Creado: 18/06/2021
  * Editado: 18/06/2021
- * Descripción: Crear el login
+ * Descripción: Crear el login sss
  * */
 public class Login extends AppCompatActivity {
 
