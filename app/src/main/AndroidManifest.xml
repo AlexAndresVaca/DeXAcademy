@@ -9,14 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDeXAcademy">
-        <activity android:name=".Login"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".EP_GestionCurso_Listar_MostrarInformacion"></activity>
+        <activity android:name=".EP_GestionCurso_Listar" />
+        <activity android:name=".EP_GestionCurso_Crear" />
+        <activity android:name=".EP_GestionCurso" />
+        <activity android:name=".EP_ActualizarRegistro" />
+        <activity android:name=".EP_Menu" />
+        <activity android:name=".EA_ListarProfesores" />
+        <activity android:name=".RegistroUsuario" />
+        <activity android:name=".Bienvenida">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Login" />
+        <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
