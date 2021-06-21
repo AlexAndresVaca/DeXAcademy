@@ -221,7 +221,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="URL de la reunión:"
-                    android:textColor="#000"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <EditText
@@ -248,7 +248,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Hora inicio:"
-                        android:textColor="#000"
+                        android:textColor="@color/black"
                         android:textStyle="bold" />
 
                     <EditText
