@@ -27,10 +27,5 @@ public class EP_GestionCurso extends AppCompatActivity {
         Intent pantallaAgregarNuevoCurso = new Intent(getApplicationContext(), EP_GestionCurso_Crear.class);//Creando un Intent para invocar a N uevo curso Activity
         startActivity(pantallaAgregarNuevoCurso); //Iniciando la pantalla agregar nuevo curso
     }
-    //Metodo para abrir la pantalla de ver todos los cursos
-    public void abrirPantallaVerCursos(View vista)
-    {
-        Intent pantallaVerCursos = new Intent(getApplicationContext(), EP_GestionCurso_Crear.class);//Creando un Intent para invocar a crear cursos Activity
-        startActivity(pantallaVerCursos); //Iniciando la pantalla ver cursos
-    }
+
 }

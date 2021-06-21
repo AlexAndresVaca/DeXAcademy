@@ -4,10 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF"
-    tools:context=".RegistroUsuario">
-
+    tools:context=".EA_RegistrarProfesor">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,36 +19,36 @@
             tools:layout_editor_absoluteY="107dp">
 
 
-                <LinearLayout
-                    android:layout_width="339dp"
-                    android:layout_height="120dp"
-                    android:background="#1D2D50"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp">
+            <LinearLayout
+                android:layout_width="339dp"
+                android:layout_height="120dp"
+                android:background="#1D2D50"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp">
 
-                    <ImageView
-                        android:id="@+id/imageView8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/estudiante" />
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/administrador" />
 
-                    <TextView
-                        android:id="@+id/textView13"
-                        android:layout_width="231dp"
-                        android:layout_height="101dp"
-                        android:layout_gravity="center_vertical"
-                        android:fontFamily="@font/roboto_slab"
-                        android:gravity="center"
-                        android:text="ESTUDIANTE"
-                        android:textColor="#FFFFFF"
-                        android:textSize="34sp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="231dp"
+                    android:layout_height="101dp"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/roboto_slab"
+                    android:gravity="center"
+                    android:text="ADMINISTRADOR"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
 
-                </LinearLayout>
+            </LinearLayout>
 
 
             <LinearLayout
@@ -71,7 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="REGISTRO DE NUEVO ESTUDIANTE"
+                    android:text="REGISTRO DE NUEVO PROFESOR"
                     android:textColor="#1D2D50"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -159,7 +156,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/btncancelar"
-                        android:onClick="volverVentanaLogin"
+                        android:onClick="volverListarProfesores"
                         android:text="Cancelar"
                         android:textColor="#FFFFFF" />
                 </LinearLayout>

@@ -28,6 +28,7 @@
                 android:layout_height="120dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -301,7 +302,8 @@
                         android:layout_height="wrap_content"
                         android:onClick="volverGestionCurso"
                         android:text="VOLVER"
-                        app:backgroundTint="#FFA812" />
+                        app:backgroundTint="#FFA812"
+                        android:layout_marginBottom="30dp"/>
                 </LinearLayout>
 
 

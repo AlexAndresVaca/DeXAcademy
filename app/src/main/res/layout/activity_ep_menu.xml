@@ -5,12 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EP_Menu">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#1D2D50"
-        android:fillViewport="true">
-    <LinearLayout
+      <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#1D2D50"
@@ -28,7 +23,8 @@
             android:layout_height="120dp"
             android:layout_gravity="center"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
 
             <ImageView
                 android:id="@+id/imgEditarCliente"
@@ -38,7 +34,7 @@
 
             <TextView
                 android:id="@+id/textEditar"
-                android:layout_width="202dp"
+                android:layout_width="177dp"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/roboto_slab"
                 android:gravity="center_horizontal|center_vertical"
@@ -48,6 +44,12 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="6dp"
+              android:layout_marginBottom="20dp"
+              android:background="#1E5F74"
+              android:orientation="vertical"></LinearLayout>
 
         <LinearLayout
 
@@ -97,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:onClick="abrirPantallaActualizarProfesor"
-                    android:text="Actualizar datos"
+                    android:text="Perfil"
                     android:textColor="#FFFEFE"
                     android:textSize="26sp"
                     app:layout_constraintTop_toBottomOf="@+id/imgActualizarProfesor" />
@@ -109,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="89dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="220dp"
+                android:layout_marginBottom="140dp"
                 android:background="@drawable/bg_card_login2"
                 android:orientation="horizontal">
 
@@ -154,5 +156,4 @@
 
         </LinearLayout>
     </LinearLayout>
-    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
