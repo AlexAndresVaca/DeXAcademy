@@ -17,14 +17,19 @@
         <activity android:name=".EE_Editar_Estudiante" />
         <activity android:name=".EE_Gestionar_Estudiante" />
         <activity android:name=".EP_GestionCurso_Listar_MostrarInformacion" />
-        <activity android:name=".EP_GestionCurso_Listar" />
         <activity android:name=".EP_GestionCurso_Crear" />
         <activity android:name=".EP_GestionCurso" />
         <activity android:name=".EP_ActualizarRegistro" />
         <activity android:name=".EP_Menu" />
         <activity android:name=".EA_ListarProfesores" />
         <activity android:name=".RegistroUsuario" />
+        <activity android:name=".EP_ActualizarRegistro_CambiarContrasena" />
+        <activity android:name=".EP_Gestion_Curso_Listar__EditarInformacion" />
+        <activity android:name=".EP_GestionCurso_Listar_InformacionAlumno"/>
+        <activity android:name=".Registro_RecuperarContrasena" />
+        <activity android:name=".EA_RegistrarProfesor" />
         <activity android:name=".Bienvenida">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
