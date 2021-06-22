@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDeXAcademy">
-        <activity android:name=".EE_Estudiante_Aceptado_Curso"></activity>
+        <activity android:name=".EE_Estudiante_Cursos_Finalizados_Certificado"></activity>
+        <activity android:name=".EE_Estudiante_Aceptado_Curso" />
         <activity android:name=".EE_Estudiante_Confirmar_Curso" />
         <activity android:name=".EE_Estudiante_Cursos_Finalizados" />
         <activity android:name=".EE_Estudiante_Cursos_en_Proceso" />
@@ -25,11 +26,10 @@
         <activity android:name=".RegistroUsuario" />
         <activity android:name=".EP_ActualizarRegistro_CambiarContrasena" />
         <activity android:name=".EP_Gestion_Curso_Listar__EditarInformacion" />
-        <activity android:name=".EP_GestionCurso_Listar_InformacionAlumno"/>
+        <activity android:name=".EP_GestionCurso_Listar_InformacionAlumno" />
         <activity android:name=".Registro_RecuperarContrasena" />
         <activity android:name=".EA_RegistrarProfesor" />
         <activity android:name=".Bienvenida">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

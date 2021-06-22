@@ -75,7 +75,7 @@
 
 
                 <EditText
-                    android:id="@+id/txtNombreRegistro"
+                    android:id="@+id/txtNombreRegistrarProfesor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -87,7 +87,7 @@
                     android:layout_height="10dp" />
 
                 <EditText
-                    android:id="@+id/txtApellidoRegistro"
+                    android:id="@+id/txtApellidoRegistrarProfesor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -100,7 +100,7 @@
                     android:layout_height="10dp" />
 
                 <EditText
-                    android:id="@+id/txtEmailRegistro"
+                    android:id="@+id/txtEmailRegistrarProfesor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -112,7 +112,7 @@
                     android:layout_height="10dp" />
 
                 <EditText
-                    android:id="@+id/txtClaveRegistro"
+                    android:id="@+id/txtClaveRegistrarProfesor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -124,7 +124,7 @@
                     android:layout_height="10dp" />
 
                 <EditText
-                    android:id="@+id/txtTelefonoRegistro"
+                    android:id="@+id/txtTelefonoRegistrarProfesor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -140,18 +140,17 @@
 
 
                     <android.widget.Button
-                        android:id="@+id/btn_crearCuenta"
+                        android:id="@+id/btn_CrearCuentaProfesor"
                         android:layout_width="155dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dp"
                         android:background="@drawable/btncrear"
-                        android:onClick="registrarUsuario"
                         android:text="Registrar"
                         android:textColor="#FFFCFC" />
 
 
                     <android.widget.Button
-                        android:id="@+id/button5"
+                        android:id="@+id/btn_CncelarCrearCuentaProfesor"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"

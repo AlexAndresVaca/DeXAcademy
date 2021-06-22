@@ -76,6 +76,14 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/txtIdCursoEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Id"
+                    android:textSize="18sp" />
+
+                <TextView
                     android:id="@+id/textView8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -85,7 +93,7 @@
                     android:fontFamily="@font/roboto_slab"/>
 
                 <EditText
-                    android:id="@+id/txtNombreNuevoCurso"
+                    android:id="@+id/txtNombreCursoEditar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -106,7 +114,7 @@
                     android:fontFamily="@font/roboto_slab"/>
 
                 <EditText
-                    android:id="@+id/txtDetalleNuevoCurso"
+                    android:id="@+id/txtDetalleCursoEditar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -121,7 +129,7 @@
                     android:layout_marginBottom="10dp">
 
                     <TextView
-                        android:id="@+id/txtFechaInicioNuevoCurso"
+                        android:id="@+id/txtFechaInicioCursoEditar"
                         android:layout_width="159dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -134,7 +142,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <Button
-                        android:id="@+id/btnFechaInicioNuevoCurso"
+                        android:id="@+id/btn_FechaInicioCursoEditar"
                         style="?android:spinnerStyle"
                         android:layout_width="154dp"
                         android:layout_height="wrap_content"
@@ -145,8 +153,15 @@
                         android:textSize="20sp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/txtFechaInicioNuevoCurso" />
+                        app:layout_constraintTop_toBottomOf="@+id/txtFechaInicioCursoEditar" />
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -156,55 +171,20 @@
                     android:layout_marginBottom="10dp">
 
                     <TextView
-                        android:id="@+id/txtFechaMaximoNuevoCurso"
+                        android:id="@+id/txtFechaFinCursoEditar"
                         android:layout_width="160dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:text="Fecha maxima del curso:"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
                         android:fontFamily="@font/roboto_slab"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <Button
-                        android:id="@+id/btnFechaMaximoNuevoCurso"
-                        style="?android:spinnerStyle"
-                        android:layout_width="152dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:gravity="center_vertical"
-                        android:text="01-01-2021"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/txtFechaMaximoNuevoCurso" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="10dp">
-
-                    <TextView
-                        android:id="@+id/txtFechaFinNuevoCurso"
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
                         android:text="Fecha fin del curso:"
                         android:textColor="@color/black"
                         android:textSize="16sp"
-                        android:fontFamily="@font/roboto_slab"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <Button
-                        android:id="@+id/btnFechaFinNuevoCurso"
+                        android:id="@+id/btn_FechaFinCursoEditar"
                         style="?android:spinnerStyle"
                         android:layout_width="152dp"
                         android:layout_height="wrap_content"
@@ -215,7 +195,7 @@
                         android:textSize="20sp"
                         app:layout_constraintLeft_toLeftOf="parent"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/txtFechaFinNuevoCurso" />
+                        app:layout_constraintTop_toBottomOf="@+id/txtFechaFinCursoEditar" />
                 </LinearLayout>
 
                 <Space
@@ -233,70 +213,39 @@
                     />
 
                 <EditText
-                    android:id="@+id/txtHoraEntradaNuevoCurso"
+                    android:id="@+id/txtUrlCursoEditar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Ingrese la URL de la reunión"
                     android:inputType="textPersonName"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp"
+                    android:layout_marginBottom="10dp"/>
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:layout_marginBottom="20dp">
-
-                    <TextView
-                        android:id="@+id/textView11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Hora inicio:"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/roboto_slab"
-                        android:textSize="16sp"/>
-
-                    <EditText
-                        android:id="@+id/txtClaveRegistro"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Ingrese la hora de inicio"
-                        android:inputType="date"
-                        android:gravity="center"/>
-                </LinearLayout>
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="18dp" />
+                    android:layout_marginBottom="20dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="15dp"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <android.widget.Button
-                        android:id="@+id/btnCrearNuevoCurso"
-                        android:layout_width="156dp"
+                        android:id="@+id/btn_ActualizarCurso"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dp"
                         android:background="@drawable/btncrear"
                         android:text="ACTUALIZAR "
                         android:textColor="#FFFFFF" />
 
-                    <android.widget.Button
-                        android:id="@+id/btnCancelarNuevoCurso"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/btncancelar"
-                        android:text="Cancelar"
-                        android:textColor="#FAFAFA" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -307,13 +256,12 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/btnVolverVenta"
+                        android:id="@+id/btn_VolverGestionCurso"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:onClick="volverGestionCurso"
+                        android:layout_marginBottom="30dp"
                         android:text="VOLVER"
-                        app:backgroundTint="#FFA812"
-                        android:layout_marginBottom="30dp"/>
+                        app:backgroundTint="#FFA812" />
                 </LinearLayout>
 
 
