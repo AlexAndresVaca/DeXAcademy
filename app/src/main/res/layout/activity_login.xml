@@ -100,7 +100,7 @@
                     android:paddingLeft="20sp"
                     android:textColorHint="#FFFDFD" />
 
-                <android.widget.RadioButton
+                <android.widget.CheckBox
                     android:id="@+id/estadoSesion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/bt_login"
-                    android:onClick="abrirMenuProfesor"
+                    android:onClick="iniciarSesion"
                     android:text="Ingresar"
                     android:textColor="#FFFFFF"
                     app:backgroundTint="@color/design_default_color_primary_variant" />
@@ -144,9 +144,10 @@
                         android:layout_width="170dp"
                         android:layout_height="34dp"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
+                        android:gravity="center"
                         android:onClick="abrirPantallaRegistrarUsuario"
                         android:text="Registrate ahora"
+                        android:layout_gravity=""
                         android:textAlignment="center"
                         android:textColor="#1D2D50"
                         android:textSize="18sp" />
