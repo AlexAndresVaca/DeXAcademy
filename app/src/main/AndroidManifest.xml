@@ -9,8 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDeXAcademy">
-        <activity android:name=".EA_RegistrarProfesor"></activity>
+        <activity android:name=".EE_Estudiante_Aceptado_Curso"></activity>
+        <activity android:name=".EE_Estudiante_Confirmar_Curso" />
+        <activity android:name=".EE_Estudiante_Cursos_Finalizados" />
+        <activity android:name=".EE_Estudiante_Cursos_en_Proceso" />
+        <activity android:name=".EE_Gestinar_Estudiante_MisCursos" />
+        <activity android:name=".EE_Editar_Estudiante" />
+        <activity android:name=".EE_Gestionar_Estudiante" />
         <activity android:name=".EP_GestionCurso_Listar_MostrarInformacion" />
+        <activity android:name=".EP_GestionCurso_Listar" />
         <activity android:name=".EP_GestionCurso_Crear" />
         <activity android:name=".EP_GestionCurso" />
         <activity android:name=".EP_ActualizarRegistro" />
