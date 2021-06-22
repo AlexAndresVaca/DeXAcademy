@@ -81,7 +81,7 @@
                         app:srcCompat="@drawable/actualizar" />
 
                     <TextView
-                        android:id="@+id/txtiCrearCurso"
+                        android:id="@+id/txtCerrarSesion"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -111,7 +111,7 @@
                         app:srcCompat="@drawable/verestudiante" />
 
                     <TextView
-                        android:id="@+id/txtiCrearCurso"
+                        android:id="@+id/txtCerrarSesion"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -149,7 +149,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txtInformacionNombreCurso"
+                    android:id="@+id/txtNombreInformacionCurso"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_slab"
@@ -162,7 +162,7 @@
                     android:layout_height="10dp" />
 
                 <TextView
-                    android:id="@+id/txtInformacionDetalleCurso"
+                    android:id="@+id/txtDetalleInformacionCurso"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -178,9 +178,9 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/txtInformacionFechaInicio"
+                        android:id="@+id/txtFechaInicioIinfo"
                         android:layout_width="127dp"
-                        android:layout_height="41dp"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:fontFamily="@font/roboto_slab"
                         android:text="Fecha inicio del curso:"
@@ -191,7 +191,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/txtInformacionFechaInicioCurso"
+                        android:id="@+id/txtFechaInicioInformacionCurso"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -206,31 +206,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginBottom="10dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/txtInformacionFechaMaximo"
-                        android:layout_width="127dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:fontFamily="@font/roboto_slab"
-                        android:text="Fecha máxima del curso:"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/txtInformacionFechaMaximoCurso"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:fontFamily="@font/roboto_slab"
-                        android:gravity="center"
-                        android:hint="Fecha máxima"
-                        android:textSize="18dp" />
-                </LinearLayout>
+                    android:orientation="horizontal"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -240,7 +216,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/txtInformacionFechaFin"
+                        android:id="@+id/txtFechaFinInfo"
                         android:layout_width="127dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -253,7 +229,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/txtInformacionFechaFinCurso"
+                        android:id="@+id/txtFechaFinInformacionCurso"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -277,7 +253,7 @@
                     android:layout_height="5dp" />
 
                 <TextView
-                    android:id="@+id/txtInformacionUrlCurso"
+                    android:id="@+id/txtUrlInformacionCurso"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_slab"
@@ -293,30 +269,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginBottom="20dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/txtInformacionHoraInicio"
-                        android:layout_width="91dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:fontFamily="@font/roboto_slab"
-                        android:text="Hora inicio:"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/txtInformacionInformacionHoraInicioCurso"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_slab"
-                        android:gravity="center"
-                        android:hint="00:00 "
-                        android:textSize="18dp" />
-                </LinearLayout>
+                    android:orientation="horizontal"/>
 
                 <Space
                     android:layout_width="match_parent"
@@ -330,7 +283,7 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/btnVolverBuscarCurso"
+                        android:id="@+id/btn_VolverGestionCursos"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="VOLVER"

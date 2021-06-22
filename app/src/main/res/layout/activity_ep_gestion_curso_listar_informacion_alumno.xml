@@ -96,15 +96,15 @@
                         android:orientation="horizontal">
 
                         <EditText
-                            android:id="@+id/txtBuscarCursos"
+                            android:id="@+id/txtBuscarAlumnoInscrito"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:ems="12"
-                            android:hint="Ingrese el nombre del curso"
+                            android:hint="Buscar alumno"
                             android:inputType="textPersonName" />
 
                         <android.widget.Button
-                            android:id="@+id/btnBuscarCurso"
+                            android:id="@+id/btnBuscarCursos"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:backgroundTint="#1E5F74"
@@ -124,7 +124,7 @@
                     android:fontFamily="@font/roboto_slab"/>
 
                 <ListView
-                    android:id="@+id/lstBuscarCurso"
+                    android:id="@+id/lstAlumnosInscritos"
                     android:layout_width="match_parent"
                     android:layout_height="216dp"
                     android:layout_marginBottom="20dp" />
@@ -142,14 +142,12 @@
                     android:orientation="vertical">
 
                     <Button
-                        android:id="@+id/btnVolverVenta"
+                        android:id="@+id/btn:VolverInformacionCurso"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:onClick="volverMenuProfesor"
-                        android:text="VOLVER"
-                        app:backgroundTint="#FFA812"
                         android:layout_marginBottom="20dp"
-                        />
+                        android:text="VOLVER"
+                        app:backgroundTint="#FFA812" />
                 </LinearLayout>
 
 

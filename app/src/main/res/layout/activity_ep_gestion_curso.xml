@@ -83,30 +83,31 @@
 
 
                 <LinearLayout
-                    android:layout_width="215dp"
-                    android:layout_height="70dp"
+                    android:layout_width="202dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
+
                     android:background="@drawable/bg_card_login2"
                     android:orientation="horizontal">
 
 
                     <ImageView
                         android:id="@+id/imgCrearCurso"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_margin="8dp"
                         app:srcCompat="@drawable/crear" />
 
                     <TextView
-                        android:id="@+id/txtiCrearCurso"
+                        android:id="@+id/txtCrearNuevoCurso"
                         android:layout_width="119dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:onClick="abrirPantallaAgregarNuevoCurso"
                         android:text="Crear nuevo curso"
                         android:textColor="#FFFFFF"
-                        android:textSize="22sp"
+                        android:textSize="18sp"
                         app:layout_constraintTop_toBottomOf="@+id/imgCrearCurso" />
                     />
 
@@ -161,7 +162,7 @@
                         android:orientation="horizontal">
 
                         <EditText
-                            android:id="@+id/txtBuscarCursos"
+                            android:id="@+id/txtBuscarCurso"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:ems="12"

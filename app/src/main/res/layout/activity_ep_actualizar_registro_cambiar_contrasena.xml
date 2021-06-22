@@ -73,13 +73,13 @@
                 android:layout_marginBottom="10dp"/>
 
             <EditText
-                android:id="@+id/txtNombreRegistro"
+                android:id="@+id/txtActualizarConstraseña"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:ems="10"
-                android:hint="Ingrese su nombre"
-                android:inputType="textPersonName"
-                android:layout_marginBottom="10dp"/>
+                android:hint="Contraseña antigua"
+                android:inputType="textPersonName" />
 
             <TextView
                 android:id="@+id/textView12"
@@ -91,13 +91,30 @@
                 android:layout_marginBottom="10dp"/>
 
             <EditText
-                android:id="@+id/txtApellidoRegistro"
+                android:id="@+id/txtActualizarContrasenaNueva"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:ems="10"
-                android:hint="Ingrese su apellido"
-                android:inputType="textPersonName"
-                android:layout_marginBottom="30dp"/>
+                android:hint="Nueva contraseña"
+                android:inputType="textPersonName" />
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirme la contraseña nueva:"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:id="@+id/txtActualizarContrasenaConfirme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:ems="10"
+                android:hint="Confirma contraseña"
+                android:inputType="textPersonName" />
 
 
 
@@ -109,20 +126,20 @@
                 android:layout_marginBottom="80dp">
 
                 <android.widget.Button
-                    android:id="@+id/btnActualizarProfesor"
+                    android:id="@+id/btn_ActualizarContrasena"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/btncrear"
                     android:text="ACTUALIZAR"
                     android:textColor="#FFFFFF"
                     android:textColorHint="#5A2727"
-                    app:backgroundTint="#6CBF3D"
-                    android:layout_marginEnd="5dp"/>
+                    app:backgroundTint="#6CBF3D" />
 
 
                 <android.widget.Button
-                    android:id="@+id/btnCancelarProfesor"
+                    android:id="@+id/btn_CancelarContrasenaNueva"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -139,7 +156,7 @@
                 android:layout_gravity="center_horizontal">
 
                 <Button
-                    android:id="@+id/btnVolverMenuProfesor"
+                    android:id="@+id/btn_VolverEditarInformacionProfesor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="VOLVER"

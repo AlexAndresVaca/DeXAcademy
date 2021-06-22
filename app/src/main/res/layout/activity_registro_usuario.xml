@@ -78,7 +78,8 @@
 
 
                 <EditText
-                    android:id="@+id/txtNombreRegistro"
+
+                    android:id="@+id/txtNombreRegistrarAlumno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -90,7 +91,7 @@
                     android:layout_height="10dp" />
 
                 <EditText
-                    android:id="@+id/txtApellidoRegistro"
+                    android:id="@+id/txtApellidoRegistrarAlumno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -103,7 +104,7 @@
                     android:layout_height="10dp" />
 
                 <EditText
-                    android:id="@+id/txtEmailRegistro"
+                    android:id="@+id/txtEmailRegistrarAlumno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -115,7 +116,7 @@
                     android:layout_height="10dp" />
 
                 <EditText
-                    android:id="@+id/txtClaveRegistro"
+                    android:id="@+id/txtClaveRegistrarAlumno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -127,7 +128,7 @@
                     android:layout_height="10dp" />
 
                 <EditText
-                    android:id="@+id/txtTelefonoRegistro"
+                    android:id="@+id/txtTelefonoRegistrarAlumno"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -143,7 +144,7 @@
 
 
                     <android.widget.Button
-                        android:id="@+id/btn_crearCuenta"
+                        android:id="@+id/btn_crearCuentaAlumno"
                         android:layout_width="155dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dp"
@@ -154,7 +155,7 @@
 
 
                     <android.widget.Button
-                        android:id="@+id/button5"
+                        android:id="@+id/btnCancelarCrearCuentaAlumno"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
