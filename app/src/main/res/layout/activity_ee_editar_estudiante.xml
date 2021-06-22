@@ -111,11 +111,18 @@
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/txtClaveEsrudianteEditar"
+            android:id="@+id/txtClaveEstudianteEditar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Ingrese una contraseña"
+            android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/txtClaveConfirmarEstudianteEditar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Confirmar la contraseña"
             android:inputType="textPassword" />
 
         <EditText
@@ -134,7 +141,7 @@
             android:orientation="horizontal">
 
           <android.widget.Button
-              android:id="@+id/btnActualizarEstudiante"
+              android:id="@+id/btn_ActualizarEstudiante"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_marginEnd="5dp"
@@ -147,7 +154,7 @@
 
 
           <android.widget.Button
-              android:id="@+id/btnCancelarEstudiante"
+              android:id="@+id/btn_CancelarEstudiante"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_marginLeft="5dp"

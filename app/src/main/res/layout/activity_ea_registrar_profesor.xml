@@ -118,6 +118,13 @@
                     android:ems="10"
                     android:hint="Ingrese una contraseña"
                     android:inputType="textPassword" />
+                <EditText
+                    android:id="@+id/txtClaveConfirmarRegistrarProfesor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Confirmar la contraseña"
+                    android:inputType="textPassword" />
 
                 <Space
                     android:layout_width="match_parent"
