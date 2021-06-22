@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EP_GestionCurso_Crear">
+    tools:context=".EP_Gestion_Curso_Listar__EditarInformacion">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
                     android:gravity="center_horizontal"
-                    android:text="AGREGAR NUEVO CURSO"
+                    android:text="EDITAR INFORMACIÓN DEL CURSO"
                     android:textColor="#1D2D50"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -81,7 +81,7 @@
                     android:layout_height="wrap_content"
                     android:text="Nombre del curso:"
                     android:textColor="#000"
-                    android:textSize="16sp"
+                    android:textSize="16dp"
                     android:fontFamily="@font/roboto_slab"/>
 
                 <EditText
@@ -102,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:text="Detalles del curso:"
                     android:textColor="#000"
-                    android:textSize="16sp"
+                    android:textSize="16dp"
                     android:fontFamily="@font/roboto_slab"/>
 
                 <EditText
@@ -287,7 +287,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dp"
                         android:background="@drawable/btncrear"
-                        android:text="Crear Curso "
+                        android:text="ACTUALIZAR "
                         android:textColor="#FFFFFF" />
 
                     <android.widget.Button
@@ -320,4 +320,5 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

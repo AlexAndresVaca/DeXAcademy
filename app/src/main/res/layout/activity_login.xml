@@ -70,9 +70,10 @@
                     android:layout_gravity="center_horizontal"
                     android:background="@drawable/bt_login2"
                     android:ems="10"
-                    android:hint="Ingresar su correo electronico"
+                    android:hint="Ingrese su correo electronico"
                     android:inputType="textEmailAddress"
-                    android:paddingLeft="20sp" />
+                    android:paddingLeft="20sp"
+                    android:textColorHint="#FFFFFF" />
 
                 <Space
                     android:layout_width="302dp"
@@ -91,12 +92,13 @@
                     android:layout_width="283dp"
                     android:layout_height="52dp"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"
                     android:background="@drawable/bt_login2"
                     android:ems="10"
-                    android:hint="Ingrese la contraseña"
+                    android:hint="Ingrese su contraseña"
                     android:inputType="text|textPassword"
                     android:paddingLeft="20sp"
-                    android:layout_marginBottom="10dp"/>
+                    android:textColorHint="#FFFDFD" />
 
                 <android.widget.RadioButton
                     android:id="@+id/estadoSesion"
@@ -134,8 +136,8 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="¿Aun no tienes cuenta? "
-                        android:textColor="#343A40"
-                        android:textSize="14dp" />
+                        android:textColor="#000000"
+                        android:textSize="16dp" />
 
                     <TextView
                         android:id="@+id/btnCrearCuenta"
@@ -147,7 +149,7 @@
                         android:text="Registrate ahora"
                         android:textAlignment="center"
                         android:textColor="#1D2D50"
-                        android:textSize="16sp" />
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
@@ -166,9 +168,10 @@
                         android:layout_gravity="center|center_horizontal"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
+                        android:onClick="abrirPantallaRecuperarContrasena"
                         android:text="¿Olvidaste tu contraseña? "
-                        android:textColor="#343A40"
-                        android:textSize="14dp" />
+                        android:textColor="#000000"
+                        android:textSize="16dp" />
 
                     <Space
                         android:layout_width="match_parent"
