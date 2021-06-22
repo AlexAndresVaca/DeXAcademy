@@ -6,345 +6,346 @@
     android:layout_height="match_parent"
     tools:context=".EP_GestionCurso_Listar_MostrarInformacion">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#1D2D50"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:fillViewport="true">
 
         <LinearLayout
-            android:layout_width="359dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imgEditarCliente"
-                android:layout_width="158dp"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/profesor" />
-
-            <TextView
-                android:id="@+id/textEditar"
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/roboto_slab"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="PROFESOR"
-                android:textColor="#FBF6F6"
-                android:textSize="26sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="6dp"
-            android:layout_marginBottom="20dp"
-            android:background="#1E5F74"
-            android:orientation="vertical"></LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#1D2D50"
-            android:orientation="horizontal"
-            android:paddingLeft="30dp"
-            android:paddingTop="10dp"
-            android:paddingRight="30dp"
-            android:translationZ="100dp">
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/bg_card_login2"
-                android:orientation="horizontal">
-
-
-                <ImageView
-                    android:id="@+id/imgCrearCurso"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="8dp"
-                    app:srcCompat="@drawable/actualizar" />
-
-                <TextView
-                    android:id="@+id/txtiCrearCurso"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:onClick="abrirPantallaAgregarNuevoCurso"
-                    android:text="Actualizar información"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp"
-                    app:layout_constraintTop_toBottomOf="@+id/imgCrearCurso" />
-                />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/bg_card_login2"
-                android:orientation="horizontal">
-
-
-                <ImageView
-                    android:id="@+id/imgCrearCurso"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="8dp"
-                    app:srcCompat="@drawable/verestudiante" />
-
-                <TextView
-                    android:id="@+id/txtiCrearCurso"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:onClick="abrirPantallaAgregarNuevoCurso"
-                    android:text="Ver alumnos"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp"
-                    app:layout_constraintTop_toBottomOf="@+id/imgCrearCurso" />
-                />
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:background="@drawable/bg_card_login"
             android:orientation="vertical"
-            android:paddingLeft="30dp"
-            android:paddingTop="25dp"
-            android:paddingRight="30dp"
-            android:translationZ="100dp">
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp">
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:gravity="center_horizontal"
-                android:text="INFORMACIÓN DEL CURSO"
-                android:textColor="#1D2D50"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="359dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/txtInformacionNombreCurso"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
-                android:gravity="center"
-                android:hint="Nombre del curso"
-                android:textSize="22dp" />
+                <ImageView
+                    android:id="@+id/imgEditarCliente"
+                    android:layout_width="158dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/profesor" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                <TextView
+                    android:id="@+id/textEditar"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/roboto_slab"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="PROFESOR"
+                    android:textColor="#FBF6F6"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/txtInformacionDetalleCurso"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/roboto_slab"
-                android:hint="Detalle del curso"
-                android:textSize="18dp" />
+                android:layout_height="6dp"
+                android:layout_marginBottom="20dp"
+                android:background="#1E5F74"
+                android:orientation="vertical"></LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_margin="5dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:paddingRight="30dp"
+                android:translationZ="100dp">
 
-                <TextView
-                    android:id="@+id/txtInformacionFechaInicio"
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="Fecha inicio del curso:"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bg_card_login2"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/txtInformacionFechaInicioCurso"
+
+                    <ImageView
+                        android:id="@+id/imgCrearCurso"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="8dp"
+                        app:srcCompat="@drawable/actualizar" />
+
+                    <TextView
+                        android:id="@+id/txtiCrearCurso"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:onClick="abrirPantallaAgregarNuevoCurso"
+                        android:text="Actualizar información"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        app:layout_constraintTop_toBottomOf="@+id/imgCrearCurso" />
+                    />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_slab"
-                    android:hint="Fecha inicio"
-                    android:textSize="18dp" />
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bg_card_login2"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:id="@+id/imgCrearCurso"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="8dp"
+                        app:srcCompat="@drawable/verestudiante" />
+
+                    <TextView
+                        android:id="@+id/txtiCrearCurso"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:onClick="abrirPantallaAgregarNuevoCurso"
+                        android:text="Ver alumnos"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        app:layout_constraintTop_toBottomOf="@+id/imgCrearCurso" />
+                    />
+
+                </LinearLayout>
             </LinearLayout>
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
             <LinearLayout
+
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_margin="5dp"
-                android:layout_marginBottom="20dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txtInformacionFechaMaximo"
-                    android:layout_width="156dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="Fecha máxima del curso:"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/txtInformacionFechaMaximoCurso"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_slab"
-                    android:hint="Fecha máxima"
-                    android:textSize="18dp" />
-            </LinearLayout>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_margin="5dp"
-                android:layout_marginBottom="20dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txtInformacionFechaFin"
-                    android:layout_width="156dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="Fecha fin del curso:"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/txtInformacionFechaFinCurso"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_slab"
-                    android:hint="Fecha fin"
-                    android:textSize="18dp" />
-            </LinearLayout>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="URL de la reunión:"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="5dp" />
-
-            <TextView
-                android:id="@+id/txtInformacionUrlCurso"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
-                android:hint="Detalle del curso"
-                android:textSize="18dp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_margin="5dp"
-                android:layout_marginBottom="20dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txtInformacionHoraInicio"
-                    android:layout_width="91dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="Hora inicio:"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/txtInformacionInformacionHoraInicioCurso"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_slab"
-                    android:hint=""
-                    android:textSize="18dp" />
-            </LinearLayout>
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <LinearLayout
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:background="@drawable/bg_card_login"
                 android:orientation="vertical"
-                android:layout_marginBottom="20dp">
-                <Button
-                    android:id="@+id/btnVolverBuscarCurso"
+                android:paddingLeft="30dp"
+                android:paddingTop="25dp"
+                android:paddingRight="30dp"
+                android:translationZ="100dp">
+
+                <TextView
+                    android:id="@+id/textView6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="VOLVER"
-                    app:backgroundTint="#FFA812" />
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center_horizontal"
+                    android:text="INFORMACIÓN DEL CURSO"
+                    android:textColor="#1D2D50"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtInformacionNombreCurso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_slab"
+                    android:gravity="center"
+                    android:hint="Nombre del curso"
+                    android:textSize="22dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/txtInformacionDetalleCurso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="Detalle del curso"
+                    android:textSize="18dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtInformacionFechaInicio"
+                        android:layout_width="127dp"
+                        android:layout_height="41dp"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_slab"
+                        android:text="Fecha inicio del curso:"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtInformacionFechaInicioCurso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_slab"
+                        android:gravity="center"
+                        android:hint="Fecha inicio"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtInformacionFechaMaximo"
+                        android:layout_width="127dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_slab"
+                        android:text="Fecha máxima del curso:"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtInformacionFechaMaximoCurso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_slab"
+                        android:gravity="center"
+                        android:hint="Fecha máxima"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtInformacionFechaFin"
+                        android:layout_width="127dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_slab"
+                        android:text="Fecha fin del curso:"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtInformacionFechaFinCurso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_slab"
+                        android:gravity="center"
+                        android:hint="Fecha fin"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_slab"
+                    android:text="URL de la reunión:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+
+                <TextView
+                    android:id="@+id/txtInformacionUrlCurso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="Url de la reunión"
+                    android:textSize="18dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtInformacionHoraInicio"
+                        android:layout_width="91dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_slab"
+                        android:text="Hora inicio:"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtInformacionInformacionHoraInicioCurso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_slab"
+                        android:gravity="center"
+                        android:hint="00:00 "
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnVolverBuscarCurso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="VOLVER"
+                        app:backgroundTint="#FFA812" />
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
 
         </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-
-    </LinearLayout>
-
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,28 +17,27 @@
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="1dp">
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
             <LinearLayout
-                android:layout_width="359dp"
-                android:layout_height="140dp"
+                android:layout_width="339dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp">
 
                 <ImageView
                     android:id="@+id/imgEditarCliente"
                     android:layout_width="158dp"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/actualizar" />
+                    app:srcCompat="@drawable/profesor" />
 
                 <TextView
                     android:id="@+id/textEditar"
-                    android:layout_width="202dp"
+                    android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/roboto_slab"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="ACTUALIZAR TUS DATOS"
+                    android:text="PROFESOR"
                     android:textColor="#FFFDFD"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -60,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_slab"
                     android:gravity="center_horizontal"
-                    android:text="MODIFICAR REGISTRO"
+                    android:text="ACTUALIZAR REGISTRO"
                     android:textColor="#1D2D50"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -117,6 +116,7 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="#A0C1B8"
                     android:ems="10"
+                    android:onClick="abrirPantallaActualizarContrasena"
                     android:text="Cambiar contraseña"
                     android:textColor="#000000" />
 
@@ -160,14 +160,16 @@
                         android:layout_weight="1"
                         android:background="@drawable/btncancelar"
                         android:text="CANCELAR"
-                        app:backgroundTint="#F73D2F" />
+                        app:backgroundTint="#F73D2F"
+                        android:textColor="#FFFFFF"/>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_gravity="center_horizontal">
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="20dp">
 
                     <Button
                         android:id="@+id/btnVolverMenuProfesor"
