@@ -146,6 +146,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/btncancelar"
                     android:text="CANCELAR"
+                    android:textColor="#FFFFFF"
                     app:backgroundTint="#F73D2F" />
             </LinearLayout>
 
