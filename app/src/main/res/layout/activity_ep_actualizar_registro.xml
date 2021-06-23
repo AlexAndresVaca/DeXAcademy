@@ -175,7 +175,7 @@
                     android:layout_marginBottom="20dp">
 
                     <Button
-                        android:id="@+id/btnVolverMenuProfesor"
+                        android:id="@+id/btn_VolverMenuProfesor"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:onClick="volverMenuProfesor"

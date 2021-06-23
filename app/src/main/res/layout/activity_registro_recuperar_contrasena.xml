@@ -2,9 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/txtNuevaContrasenaRecuperar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Registro_RecuperarContrasena">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,9 +19,9 @@
             android:layout_width="339dp"
             android:layout_height="120dp"
             android:layout_gravity="center"
-            android:orientation="horizontal"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/imgEditarCliente"
@@ -38,6 +40,7 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -53,93 +56,108 @@
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="@font/roboto_slab"
                 android:gravity="center_horizontal"
                 android:text="RECUPERAR CONTRASEÑA"
                 android:textColor="#1D2D50"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="20dp"
-                />
+                android:textStyle="bold" />
 
 
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="Ingrese su nombre completo:"
-                android:textSize="18sp"
                 android:textColor="@color/black"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/txtNombreRegistroAlumno"
+                android:id="@+id/txtNombreRecuperarContraseña"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:ems="10"
                 android:hint="Ingrese su nombre"
-                android:inputType="textPersonName"
-                android:layout_marginBottom="10dp"/>
+                android:inputType="textPersonName" />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/textViewcontrasenanueva"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="Ingrese la contraseña nueva:"
-                android:textSize="18sp"
                 android:textColor="@color/black"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/txtApellidoRegistrarAlumno"
+                android:id="@+id/txtContrasenaNuevaRecuperarContrasena"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:ems="10"
-                android:hint="Ingrese su apellido"
-                android:inputType="textPersonName"
-                android:layout_marginBottom="30dp"/>
+                android:hint="Ingrese la contraseña nueva"
+                android:inputType="textPersonName" />
+            <TextView
+                android:id="@+id/textViewcontrasenaconfirme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Confirme la nueva contraseña:"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
-
+            <EditText
+                android:id="@+id/txtContrasenaConfirmarRecuperarContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:ems="10"
+                android:hint="Confirmar la contraseña"
+                android:inputType="textPersonName" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
-                android:orientation="horizontal"
-                android:layout_marginBottom="80dp">
+                android:layout_marginBottom="80dp"
+                android:orientation="horizontal">
 
                 <android.widget.Button
-                    android:id="@+id/btnActualizarProfesor"
+                    android:id="@+id/btn_RecuperarContrasena"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/btncrear"
                     android:text="CAMBIAR"
                     android:textColor="#FFFFFF"
                     android:textColorHint="#5A2727"
-                    app:backgroundTint="#6CBF3D"
-                    android:layout_marginEnd="5dp"/>
+                    app:backgroundTint="#6CBF3D" />
 
 
                 <android.widget.Button
-                    android:id="@+id/btnCancelarProfesor"
+                    android:id="@+id/btn_CancelarRecuperarContrasena"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/btncancelar"
                     android:text="CANCELAR"
-                    app:backgroundTint="#F73D2F" />
+                    android:textColor="#FFFFFF"
+                    app:backgroundTint="#FFFEFE" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/btnVolverMenuProfesor"
+                    android:id="@+id/btn_VolverLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="volverLogin"
