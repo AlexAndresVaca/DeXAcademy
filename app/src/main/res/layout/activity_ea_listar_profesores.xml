@@ -91,6 +91,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/bg_card_login2"
+                    android:onClick="abrirPantallaAgregarProfesor"
                     android:orientation="horizontal">
 
 
@@ -106,7 +107,6 @@
                         android:layout_width="136dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:onClick="abrirPantallaAgregarProfesor"
                         android:text="Agregar nuevo profesor"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp"
@@ -157,7 +157,6 @@
                             android:id="@+id/txtBuscarProfesor"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:ems="12"
                             android:hint="Ingrese el nombre del profesor"
                             android:inputType="textPersonName" />
 
@@ -166,7 +165,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:backgroundTint="#1E5F74"
-                            android:drawableTop="@android:drawable/ic_menu_search" />
+                            android:drawableTop="@android:drawable/ic_menu_search"
+                            android:onClick="buscarProfesor" />
 
                     </LinearLayout>
                 </LinearLayout>

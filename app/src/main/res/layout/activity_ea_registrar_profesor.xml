@@ -56,7 +56,6 @@
                 android:layout_height="match_parent"
                 android:layout_margin="15dp"
                 android:background="@drawable/bg_card_login"
-                android:onClick="volverVentanaLogin"
                 android:orientation="vertical"
                 android:paddingLeft="30dp"
                 android:paddingTop="40dp"
@@ -79,7 +78,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Ingrese su nombre"
+                    android:hint="Ingrese el nombre"
                     android:inputType="textPersonName" />
 
                 <Space
@@ -91,7 +90,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Ingrese su apellido"
+                    android:hint="Ingrese el apellido"
                     android:inputType="textPersonName" />
 
 
@@ -104,7 +103,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Ingrese su dirección de correo"
+                    android:hint="Ingrese la dirección de correo"
                     android:inputType="textEmailAddress" />
 
                 <Space
@@ -135,7 +134,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Ingrese su número del telefono"
+                    android:hint="Ingrese el número del telefono"
                     android:inputType="phone" />
 
                 <LinearLayout
@@ -152,6 +151,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dp"
                         android:background="@drawable/btncrear"
+                        android:onClick="registrarProfesor"
                         android:text="Registrar"
                         android:textColor="#FFFCFC" />
 
@@ -166,7 +166,6 @@
                         android:text="Cancelar"
                         android:textColor="#FFFFFF" />
                 </LinearLayout>
-
 
 
             </LinearLayout>
