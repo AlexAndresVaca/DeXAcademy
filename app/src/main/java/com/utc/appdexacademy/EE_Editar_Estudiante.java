@@ -36,7 +36,7 @@ public class EE_Editar_Estudiante extends AppCompatActivity {
         txtTelefonoEstudianteEditar = (EditText) findViewById(R.id.txtTelefonoEstudianteEditar);
         //Base de datos
         bdd = new BaseDatos(getApplicationContext());
-        // Recuperar info del profesor
+        // Recuperar info del estudiante
         SharedPreferences prefs = getSharedPreferences("inicioSesion", Context.MODE_PRIVATE);
         idEstudiante = prefs.getString("idUsu", "");
         txtIdEstudianteEditar.setText(idEstudiante);

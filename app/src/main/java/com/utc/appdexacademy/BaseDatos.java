@@ -47,13 +47,12 @@ public class BaseDatos extends SQLiteOpenHelper {
     private static final String tablaInscripcion = "CREATE TABLE inscripcion(" +
             "id_ins integer PRIMARY KEY AUTOINCREMENT ," +
             "codigo_unico_ins text ," +
-            "estado_aprobacion_ins text ," +
             "estado_progreso_ins text ," +
-            "fk_id_curso integer, " +
+            "fk_id_cur integer, " +
             "fk_id_alu integer, " +
-            "FOREIGN KEY (id_curso) REFERENCES curso (id_curso), " +
-            "FOREIGN KEY (id_alu) REFERENCES curso (id_alu)" +
-            ")";
+            "FOREIGN KEY (fk_id_cur) REFERENCES curso (id_cur), " +
+            "FOREIGN KEY (fk_id_alu) REFERENCES curso (id_usu)" +
+            ");";
     // SEMILLAS
     private static final String usuAdm = "INSERT INTO usuario (apellido_usu, nombre_usu, tipo_usu, correo_usu, clave_usu, telefono_usu) " +
             "VALUES ('admin','super','adm','adm@dex.com','admin1234','0999999999');";
@@ -63,6 +62,13 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     private static final String usuAlu = "INSERT INTO usuario (apellido_usu, nombre_usu, tipo_usu, correo_usu, clave_usu, telefono_usu) " +
             "VALUES ('cabas','luis','estudiante','luis@gmail.com','luis1234','0999999999');";
+
+    private static final String nuevoCursoA = "INSERT INTO curso (nombre_cur, detalle_cur, f_ini_cur, f_fin_cur , num_horas, url_cur, fk_id_usu) " +
+            "VALUES ('JAVA desde 0','Aprende JAVA totalmente en español','7-7-2021','7-8-2021','40','','2');";
+    private static final String nuevoCursoB = "INSERT INTO curso (nombre_cur, detalle_cur, f_ini_cur, f_fin_cur , num_horas, url_cur, fk_id_usu) " +
+            "VALUES ('VUE desde 0','Aprende VUE totalmente en español','7-7-2021','7-8-2021','40','','2');";
+    private static final String nuevoCursoC = "INSERT INTO curso (nombre_cur, detalle_cur, f_ini_cur, f_fin_cur , num_horas, url_cur, fk_id_usu) " +
+            "VALUES ('JavaScript desde 0','Aprende JavaScript totalmente en español','7-7-2021','7-8-2021','40','','2');";
 
     //CONSTRUCTOR
     public BaseDatos(Context contexto) {
@@ -74,13 +80,15 @@ public class BaseDatos extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         //ejecutando el query ddl para crear la tabla usuario con sus atributos
         db.execSQL(tablaUsuario);
+        db.execSQL(tablaCursos);
+        db.execSQL(tablaInscripcion);
+        // Semilla
         db.execSQL(usuAdm);
         db.execSQL(usuProf);
         db.execSQL(usuAlu);
-        db.execSQL(tablaCursos);
-        //ejecutando el query ddl para crear la tabla usuario con sus atributos
-        // db.execSQL(tablaInscripcion);
-
+        db.execSQL(nuevoCursoA);
+        db.execSQL(nuevoCursoB);
+        db.execSQL(nuevoCursoC);
     }
 
     //PROCESO 2: Metodo que se ejecuta automaticamente cuando se detectan cambios en la versino con sus atributos
@@ -353,12 +361,12 @@ public class BaseDatos extends SQLiteOpenHelper {
      * */
     // C R E A T E D
     ///PROCESO 1: Metodo para insertar datos, retorna true cuando inserta y false cuando hay error
-    public boolean agregarInscripcion(String codigo, String estado_aprobacion, String estado_progreso, String curso, String alumno) {
+    public boolean agregarInscripcion(String codigo, String estado_progreso, String curso, String alumno) {
         SQLiteDatabase miBDD = getWritableDatabase(); //Llamando a la base de datos en el objeto miBDD
         if (miBDD != null)//validando que la base de datos exista no sea nula
         {
-            String sql = "INSERT INTO inscripcion (codigo_unico_ins, estado_aprobacion_ins, estado_progreso_ins, fk_id_cur , fk_id_alu) " +
-                    "VALUES ('" + codigo + "','" + estado_aprobacion + "','" + estado_progreso + "','" + curso + "','" + alumno + "')";
+            String sql = "INSERT INTO inscripcion (codigo_unico_ins, estado_progreso_ins, fk_id_cur , fk_id_alu) " +
+                    "VALUES ('" + codigo + "','" + estado_progreso + "','" + curso + "','" + alumno + "')";
             miBDD.execSQL(sql);
             miBDD.close();
             return true;
@@ -378,6 +386,17 @@ public class BaseDatos extends SQLiteOpenHelper {
             return null;
         }
 
+    }
+
+    public boolean verificarSiNoEstaYaInscrito(String idCurso, String idEstudiante) {
+        SQLiteDatabase miBDD = getReadableDatabase();
+        String sql = "SELECT * FROM inscripcion " +
+                "WHERE fk_id_cur = '" + idCurso + "' AND fk_id_alu = '" + idEstudiante + "'; ";
+        Cursor existencia = miBDD.rawQuery(sql, null);
+        if (existencia.moveToFirst()) {
+            return true;
+        }
+        return false;
     }
 
     // U P D A T E
@@ -412,6 +431,46 @@ public class BaseDatos extends SQLiteOpenHelper {
         return false; //retorna falso cuando no existe la bdd
     }
 
+    // ESTUDIANTE - CURSOS
+    public Cursor buscarCursosDelEstudiante(String idEstudiante) {
+        SQLiteDatabase miBDD = getReadableDatabase();
+        String sql = "SELECT * FROM curso " +
+                "WHERE fk_id_usu = '" + idEstudiante + "' " +
+                "ORDER BY nombre_cur ASC;";
+        if (miBDD != null) {
+            Cursor cursos = miBDD.rawQuery(sql, null);
+            if (cursos.moveToFirst()) {
+                return cursos;
+            }
+        }
+        return null;
+    }
 
+    public Cursor buscarCursosParaEstudiante(String idEstudiante) {
+        SQLiteDatabase miBDD = getReadableDatabase();
+        String sql = "SELECT * FROM curso " +
+                "ORDER BY nombre_cur ASC;";
+        if (miBDD != null) {
+            Cursor cursos = miBDD.rawQuery(sql, null);
+            if (cursos.moveToFirst()) {
+                return cursos;
+            }
+        }
+        return null;
+    }
+
+    public Cursor buscarCursosParaAlumnoPorNombre(String buscar) {
+        SQLiteDatabase miBDD = getReadableDatabase();
+        String sql = "SELECT * FROM curso " +
+                "WHERE nombre_cur LIKE '%" + buscar + "%'" +
+                "ORDER BY nombre_cur ASC;";
+        if (miBDD != null) {
+            Cursor cursos = miBDD.rawQuery(sql, null);
+            if (cursos.moveToFirst()) {
+                return cursos;
+            }
+        }
+        return null;
+    }
 }
 

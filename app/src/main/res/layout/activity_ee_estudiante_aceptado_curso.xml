@@ -36,12 +36,14 @@
             android:layout_height="44dp" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/mensajeConfirmacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_slab"
             android:gravity="center"
-            android:text="Te has inscrito al curso correctamente"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="Listo! Te haz inscrito en el curso de"
             android:textColor="#FFFFFF"
             android:textSize="32sp" />
 
@@ -52,10 +54,12 @@
 
         <Button
             android:id="@+id/button6"
-            android:layout_width="173dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#FFA812"
-            android:text="OK"
+            android:onClick="volver"
+            android:text="Volver a cursos"
+            android:textColor="#FFFFFF"
             android:textSize="20sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

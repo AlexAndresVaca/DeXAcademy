@@ -22,6 +22,8 @@ public class EE_Gestionar_Estudiante extends AppCompatActivity {
     }
 
     public void verCursosEstudiante(View vista) {
+        Intent irVerCursosEstudiante = new Intent(getApplicationContext(), EE_Gestinar_Estudiante_MisCursos.class);
+        startActivity(irVerCursosEstudiante);
     }
 
     public void cerrarSesion(View vista) {
