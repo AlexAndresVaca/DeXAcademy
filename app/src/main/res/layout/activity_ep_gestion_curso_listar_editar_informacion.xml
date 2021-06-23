@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EP_Gestion_Curso_Listar__EditarInformacion">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -75,22 +76,38 @@
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/txtIdCursoEditar"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="Id"
-                    android:textSize="18sp" />
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="ID: "
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtIdCursoEditar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Id"
+                        android:textSize="18sp" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/textView8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_slab"
                     android:text="Nombre del curso:"
                     android:textColor="#000"
-                    android:textSize="16dp"
-                    android:fontFamily="@font/roboto_slab"/>
+                    android:textSize="16dp" />
 
                 <EditText
                     android:id="@+id/txtNombreCursoEditar"
@@ -108,10 +125,10 @@
                     android:id="@+id/textView9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_slab"
                     android:text="Detalles del curso:"
                     android:textColor="#000"
-                    android:textSize="16dp"
-                    android:fontFamily="@font/roboto_slab"/>
+                    android:textSize="16dp" />
 
                 <EditText
                     android:id="@+id/txtDetalleCursoEditar"
@@ -121,12 +138,49 @@
                     android:hint="Detalles del curso"
                     android:inputType="textPersonName" />
 
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_slab"
+                    android:text="Duración del cuso:"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/txtHorasCursoEditar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Núm. Horas"
+                        android:inputType="none|number" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:text="Horas"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/txtFechaInicioCursoEditar"
@@ -148,6 +202,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center_vertical"
+                        android:onClick="OpenDatePickerInicio"
                         android:text="01-01-2021"
                         android:textColor="@color/black"
                         android:textSize="20sp"
@@ -160,15 +215,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/txtFechaFinCursoEditar"
@@ -190,6 +245,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center_vertical"
+                        android:onClick="OpenDatePickerFin"
                         android:text="01-01-2021"
                         android:textColor="@color/black"
                         android:textSize="20sp"
@@ -206,30 +262,28 @@
                     android:id="@+id/textView10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_slab"
                     android:text="URL de la reunión:"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/roboto_slab"
-                    android:textSize="16sp"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/txtUrlCursoEditar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:ems="10"
                     android:hint="Ingrese la URL de la reunión"
                     android:inputType="textPersonName"
-                    android:textSize="18dp"
-                    android:layout_marginBottom="10dp"/>
-
+                    android:textSize="18dp" />
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="20dp"/>
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -243,6 +297,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dp"
                         android:background="@drawable/btncrear"
+                        android:onClick="actualizarCurso"
                         android:text="ACTUALIZAR "
                         android:textColor="#FFFFFF" />
 
@@ -260,6 +315,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="30dp"
+                        android:onClick="volver"
                         android:text="VOLVER"
                         app:backgroundTint="#FFA812" />
                 </LinearLayout>

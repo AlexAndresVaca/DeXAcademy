@@ -32,6 +32,17 @@ public class BaseDatos extends SQLiteOpenHelper {
             "clave_usu text ," +
             "telefono_usu text)";
 
+    private static final String tablaCursos = "CREATE TABLE curso(" +
+            "id_cur INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "nombre_cur TEXT, " +
+            "detalle_cur TEXT, " +
+            "f_ini_cur DATE, " +
+            "f_fin_cur DATE, " +
+            "num_horas INTEGER, " +
+            "url_cur INTEGER, " +
+            "fk_id_usu INTEGER, " +
+            "FOREIGN KEY (fk_id_usu) REFERENCES usuario (id_usu)" +
+            ");";
     //definiendo la estructura de la tabla inscripcion
     private static final String tablaInscripcion = "CREATE TABLE inscripcion(" +
             "id_ins integer PRIMARY KEY AUTOINCREMENT ," +
@@ -47,6 +58,12 @@ public class BaseDatos extends SQLiteOpenHelper {
     private static final String usuAdm = "INSERT INTO usuario (apellido_usu, nombre_usu, tipo_usu, correo_usu, clave_usu, telefono_usu) " +
             "VALUES ('admin','super','adm','adm@dex.com','admin1234','0999999999');";
 
+    private static final String usuProf = "INSERT INTO usuario (apellido_usu, nombre_usu, tipo_usu, correo_usu, clave_usu, telefono_usu) " +
+            "VALUES ('flores','hugo','profesor','hugo@gmail.com','hugo1234','0999999999');";
+
+    private static final String usuAlu = "INSERT INTO usuario (apellido_usu, nombre_usu, tipo_usu, correo_usu, clave_usu, telefono_usu) " +
+            "VALUES ('cabas','luis','alumno','luis@gmail.com','luis1234','0999999999');";
+
     //CONSTRUCTOR
     public BaseDatos(Context contexto) {
         super(contexto, nombreBdd, null, versionBdd);
@@ -58,6 +75,9 @@ public class BaseDatos extends SQLiteOpenHelper {
         //ejecutando el query ddl para crear la tabla usuario con sus atributos
         db.execSQL(tablaUsuario);
         db.execSQL(usuAdm);
+        db.execSQL(usuProf);
+        db.execSQL(usuAlu);
+        db.execSQL(tablaCursos);
         //ejecutando el query ddl para crear la tabla usuario con sus atributos
         // db.execSQL(tablaInscripcion);
 
@@ -68,10 +88,13 @@ public class BaseDatos extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Eliminacion de la version anterior de la tabla inscripcion
         db.execSQL("DROP TABLE IF EXISTS inscripcion");
+        // Eliminacion de la version anterior de la tabla inscripcion
+        db.execSQL("DROP TABLE IF EXISTS curso");
         // Eliminacion de la version anterior de la tabla usuario
         db.execSQL("DROP TABLE IF EXISTS usuario");
         //Ejecucion del codigo para crear la tabla usuario con su nueva estructura
         db.execSQL(tablaUsuario);
+        db.execSQL(tablaCursos);
         //Ejecucion del codigo para crear la tabla inscripcion con su nueva estructura
         db.execSQL(tablaInscripcion);
     }
@@ -100,34 +123,7 @@ public class BaseDatos extends SQLiteOpenHelper {
 
 
     // R E A D
-    public Cursor listarUsuarios() {
-        SQLiteDatabase miBDD = getReadableDatabase(); //Llamando a la base de datos
-        String sql = "select * from usuario ";
-        Cursor usuario = miBDD.rawQuery(sql, null);
-        if (usuario.moveToFirst()) {//verificando que el objeto usuario tenga resultados
-            return usuario; //retornamos datos encontrados
-        } else {
-            //Nose encuentra el usuario ..Porque no eexiste el email y congtrase{a
-            return null;
-        }
-
-    }
-
     // S E A R C H
-    // Buscar usuarios
-    public Cursor buscarUsuarios(String busqueda) {
-        SQLiteDatabase miBDD = getReadableDatabase(); //Llamando a la base de datos
-        String sql = "select * from usuario ";
-        Cursor usuario = miBDD.rawQuery(sql, null);
-        if (usuario.moveToFirst()) {//verificando que el objeto usuario tenga resultados
-            return usuario; //retornamos datos encontrados
-        } else {
-            //Nose encuentra el usuario ..Porque no eexiste el email y congtrase{a
-            return null;
-        }
-
-    }
-
     public Cursor listarProfesores() {
         SQLiteDatabase miBDD = getReadableDatabase(); //Llamando a la base de datos
         String sql = "select * from usuario " +
@@ -173,6 +169,23 @@ public class BaseDatos extends SQLiteOpenHelper {
         }
     }
 
+    public boolean actualizarProfesor(String id, String apellido, String nombre, String correo, String telefono) {
+        SQLiteDatabase miBDD = getWritableDatabase();
+        if (miBDD != null) {
+            String sql = "UPDATE usuario SET " +
+                    "apellido_usu = '" + apellido + "', " +
+                    "nombre_usu = '" + nombre + "', " +
+                    "correo_usu = '" + correo + "', " +
+                    "telefono_usu = '" + telefono + "' " +
+                    "WHERE id_usu = " + id + ";";
+            miBDD.execSQL(sql);
+            miBDD.close();
+            return true;
+        }
+        return false;
+    }
+
+    //PROCESO 4: metodo para consultar por email y password (Login)
     public Cursor iniciarSesionUsuario(String correo, String clave) {
         SQLiteDatabase miBDD = getReadableDatabase(); //Llamando a la base de datos
         String sql = "select * from usuario " +
@@ -187,23 +200,10 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     }
 
-    //PROCESO 4: metodo para consultar por email y password (Login)
-    public Cursor obtenerUsuarioporEmailPassword(String email, String password) {
-        SQLiteDatabase miBDD = getWritableDatabase(); //Llamando a la base de datos
-        Cursor usuario = miBDD.rawQuery("select * from usuario where " +
-                "email_usu='" + email + "' and password_usu='" + password + "';", null); //Realizando la consulta y almacenando los resultados en el objeto usuario
-        if (usuario.moveToFirst()) {//verificando que el objeto usuario tenga resultados
-            return usuario; //retornamos datos encontrados
-        } else {
-            //Nose encuentra el usuario ..Porque no eexiste el email y congtrase{a
-            return null;
-        }
-
-    }
 
     // U P D A T E
     ///Metodo para actualizar la informacion personal del usuario
-    public boolean acualizarCliente(String id, String apellido, String nombre, String correo, String telefono) {
+    public boolean acualizarEstudiante(String id, String apellido, String nombre, String correo, String telefono) {
         SQLiteDatabase miBdd = getWritableDatabase(); //objeto para manejar la base de datos
         String sql = "UPDATE usuario SET " +
                 "apellido_usu ='" + apellido + "', " +
@@ -248,6 +248,86 @@ public class BaseDatos extends SQLiteOpenHelper {
         return false; //retorna falso cuando no existe la bdd
     }
 
+    // G E S T I O N    D E    C U R S O
+    /*
+     * C => Create (agregarCurso)
+     * R => Read
+     * U => Update
+     * D => Delete
+     * */
+    public boolean agregarCurso(String nombre, String detalle, String f_ini, String f_fin, String duracion, String url, String idProfesor) {
+        SQLiteDatabase miBDD = getWritableDatabase(); //Llamando a la base de datos en el objeto miBDD
+        if (miBDD != null)//validando que la base de datos exista no sea nula
+        {
+            String sql = "INSERT INTO curso (nombre_cur, detalle_cur, f_ini_cur, f_fin_cur, num_horas,url_cur,fk_id_usu) " +
+                    "VALUES ('" + nombre + "','" + detalle + "','" + f_ini + "','" + f_fin + "','" + duracion + "','" + url + "','" + idProfesor + "');";
+            miBDD.execSQL(sql);
+            miBDD.close();
+            return true;
+        }
+        return false; //retorno cuando no exista la bdd
+    }
+
+    public Cursor buscarCursoPorId(String id) {
+        SQLiteDatabase miBDD = getReadableDatabase();
+        String sql = "SELECT * FROM curso " +
+                "WHERE id_cur = '" + id + "' " +
+                "ORDER BY nombre_cur ASC;";
+        if (miBDD != null) {
+            Cursor cursos = miBDD.rawQuery(sql, null);
+            if (cursos.moveToFirst()) {
+                return cursos;
+            }
+        }
+        return null;
+    }
+
+    public Cursor buscarCursosDelProfesor(String idProfesor) {
+        SQLiteDatabase miBDD = getReadableDatabase();
+        String sql = "SELECT * FROM curso " +
+                "WHERE fk_id_usu = '" + idProfesor + "' " +
+                "ORDER BY nombre_cur ASC;";
+        if (miBDD != null) {
+            Cursor cursos = miBDD.rawQuery(sql, null);
+            if (cursos.moveToFirst()) {
+                return cursos;
+            }
+        }
+        return null;
+    }
+
+    public Cursor buscarCursosDelProfesorPorNombre(String idProfesor, String buscar) {
+        SQLiteDatabase miBDD = getReadableDatabase();
+        String sql = "SELECT * FROM curso " +
+                "WHERE fk_id_usu = '" + idProfesor + "'" +
+                "AND nombre_cur LIKE '%" + buscar + "%'" +
+                "ORDER BY nombre_cur ASC;";
+        if (miBDD != null) {
+            Cursor cursos = miBDD.rawQuery(sql, null);
+            if (cursos.moveToFirst()) {
+                return cursos;
+            }
+        }
+        return null;
+    }
+
+    public boolean editarCurso(String idCursoVer, String nombre, String detalle, String f_ini, String f_fin, String horas, String url) {
+        SQLiteDatabase miBdd = getWritableDatabase(); //objeto para manejar la base de datos
+        String sql = "UPDATE curso SET " +
+                "nombre_cur ='" + nombre + "', " +
+                "detalle_cur ='" + detalle + "', " +
+                "f_ini_cur ='" + f_ini + "', " +
+                "f_fin_cur ='" + f_fin + "', " +
+                "num_horas ='" + horas + "', " +
+                "url_cur ='" + url + "' " +
+                "WHERE id_cur='" + idCursoVer + "';";
+        if (miBdd != null) {
+            miBdd.execSQL(sql);
+            miBdd.close(); //cerrando la conexion con la bdd
+            return true; //regresando verdadero ya que el proceso d actualizacion fue exitosa
+        }
+        return false; //retorna falso cuando no existe la bdd
+    }
 
     // G E S T I O N    D E    I N S C R I P C I Ó N
     /*

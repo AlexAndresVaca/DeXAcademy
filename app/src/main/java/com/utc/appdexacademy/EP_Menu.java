@@ -29,15 +29,6 @@ public class EP_Menu extends AppCompatActivity {
         startActivity(pantallaGestionCuso); //Iniciando la pantalla Clientes
     }
 
-    //Metodo para volver al la ventana de menu profesor
-    public void volverMenuProfesor(View vista) {
-        finish();//cerrando ventana de nueva venta
-        //creando un objeto para manejar la ventana de ventas
-        Intent ventanaMenuProfesor = new Intent(getApplicationContext(), EP_Menu.class);
-        startActivity(ventanaMenuProfesor);//solicitando que se abra la ventana de gestion clientes
-
-    }
-
     public void cerrarSesion(View vista) {
         // Borrar datos del sharepreferences
         SharedPreferences prefs = getSharedPreferences("inicioSesion", Context.MODE_PRIVATE);

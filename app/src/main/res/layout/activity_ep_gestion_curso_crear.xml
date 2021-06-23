@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EP_GestionCurso_Crear">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -79,10 +80,10 @@
                     android:id="@+id/textView8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_slab"
                     android:text="Nombre del curso:"
                     android:textColor="#000"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/roboto_slab"/>
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/txtNombreCursoNuevo"
@@ -100,10 +101,10 @@
                     android:id="@+id/textView9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_slab"
                     android:text="Detalles del curso:"
                     android:textColor="#000"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/roboto_slab"/>
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/txtDetalleCursoNuevo"
@@ -113,12 +114,49 @@
                     android:hint="Detalles del curso"
                     android:inputType="textPersonName" />
 
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_slab"
+                    android:text="Duración del cuso:"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/txtHorasCursoNuevo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Núm. Horas"
+                        android:inputType="none|number" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:text="Horas"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/txtFechaInicioCursoNuevo"
@@ -140,6 +178,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center_vertical"
+                        android:onClick="OpenDatePickerInicio"
                         android:text="01-01-2021"
                         android:textColor="@color/black"
                         android:textSize="20sp"
@@ -152,15 +191,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/txtFechaFinCursoNuevo"
@@ -182,6 +221,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center_vertical"
+                        android:onClick="OpenDatePickerFin"
                         android:text="01-01-2021"
                         android:textColor="@color/black"
                         android:textSize="20sp"
@@ -198,11 +238,10 @@
                     android:id="@+id/textView10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_slab"
                     android:text="URL de la reunión:"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/roboto_slab"
-                    android:textSize="16sp"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
 
@@ -222,8 +261,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="20dp"/>
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal" />
 
                 <Space
                     android:layout_width="match_parent"
@@ -237,20 +276,14 @@
 
                     <android.widget.Button
                         android:id="@+id/btn_CrearCursoNuevo"
-                        android:layout_width="156dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="5dp"
                         android:background="@drawable/btncrear"
+                        android:onClick="registrarNuevoCurso"
                         android:text="Crear Curso "
                         android:textColor="#FFFFFF" />
 
-                    <android.widget.Button
-                        android:id="@+id/btn_CancelarCursoNuevo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/btncancelar"
-                        android:text="Cancelar"
-                        android:textColor="#FAFAFA" />
                 </LinearLayout>
 
                 <LinearLayout

@@ -75,7 +75,7 @@ public class EA_RegistrarProfesor extends AppCompatActivity {
             try {
                 bdd.agregarUsuario(apellido, nombre, "profesor", correo, clave, telefono);
                 volverListarProfesores(null);
-                Toast.makeText(this, "Profesor registrado co", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Profesor registrado con éxito!", Toast.LENGTH_SHORT).show();
             } catch (Exception ex) {
                 Toast.makeText(this, "Huston, tenemos un problema...", Toast.LENGTH_SHORT).show();
             }

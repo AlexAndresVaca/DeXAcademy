@@ -161,13 +161,14 @@
                         android:id="@+id/btnActualizarProfesor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
                         android:layout_weight="1"
                         android:background="@drawable/btncrear"
+                        android:onClick="actualizarDatosProfesor"
                         android:text="ACTUALIZAR"
                         android:textColor="#FFFFFF"
                         android:textColorHint="#5A2727"
-                        app:backgroundTint="#6CBF3D"
-                        android:layout_marginEnd="5dp"/>
+                        app:backgroundTint="#6CBF3D" />
 
 
                 </LinearLayout>

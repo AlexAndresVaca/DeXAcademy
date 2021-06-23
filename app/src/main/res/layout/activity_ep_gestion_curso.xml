@@ -89,6 +89,7 @@
                     android:layout_marginBottom="10dp"
 
                     android:background="@drawable/bg_card_login2"
+                    android:onClick="abrirPantallaAgregarNuevoCurso"
                     android:orientation="horizontal">
 
 
@@ -104,7 +105,6 @@
                         android:layout_width="119dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:onClick="abrirPantallaAgregarNuevoCurso"
                         android:text="Crear nuevo curso"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp"
@@ -174,7 +174,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:backgroundTint="#1E5F74"
-                            android:drawableTop="@android:drawable/ic_menu_search" />
+                            android:drawableTop="@android:drawable/ic_menu_search"
+                            android:onClick="buscarMisCursosProfesor" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -185,7 +186,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_slab"
-                    android:text="Todos los cursos"
+                    android:text="Todos tus cursos"
                     android:textColor="#000000"
                     android:textSize="16sp" />
 

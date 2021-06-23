@@ -26,6 +26,7 @@ public class Bienvenida extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                finish();
                 Intent ventantaInicio = null;
                 if (recuperar.isEmpty()) {
                     ventantaInicio = new Intent(getApplicationContext(), Login.class);
@@ -41,7 +42,6 @@ public class Bienvenida extends AppCompatActivity {
                     }
                 }
                 startActivity(ventantaInicio);
-                finish();
             }
         }, 4000);
     }
