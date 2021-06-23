@@ -128,6 +128,19 @@ public class BaseDatos extends SQLiteOpenHelper {
 
     }
 
+    public Cursor listarProfesores() {
+        SQLiteDatabase miBDD = getReadableDatabase(); //Llamando a la base de datos
+        String sql = "select * from usuario " +
+                "WHERE tipo_usu = 'profesor' ";
+        Cursor profesores = miBDD.rawQuery(sql, null);
+        if (profesores.moveToFirst()) {//verificando que el objeto usuario tenga resultados
+            return profesores; //retornamos datos encontrados
+        } else {
+            //Nose encuentra el usuario ..Porque no eexiste el email y congtrase{a
+            return null;
+        }
+    }
+
     public Cursor iniciarSesionUsuario(String correo, String clave) {
         SQLiteDatabase miBDD = getReadableDatabase(); //Llamando a la base de datos
         String sql = "select * from usuario " +
@@ -271,6 +284,7 @@ public class BaseDatos extends SQLiteOpenHelper {
         }
         return false; //retorna falso cuando no existe la bdd
     }
+
 
 }
 
