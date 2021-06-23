@@ -153,15 +153,6 @@
               app:backgroundTint="#6CBF3D" />
 
 
-          <android.widget.Button
-              android:id="@+id/btn_CancelarEstudiante"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginLeft="5dp"
-              android:layout_weight="1"
-              android:background="@drawable/btncancelar"
-              android:text="CANCELAR"
-              app:backgroundTint="#F73D2F" />
         </LinearLayout>
 
         <LinearLayout

@@ -155,16 +155,6 @@
                         android:layout_marginEnd="5dp"/>
 
 
-                    <android.widget.Button
-                        android:id="@+id/btnCancelarProfesor"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/btncancelar"
-                        android:text="CANCELAR"
-                        app:backgroundTint="#F73D2F"
-                        android:textColor="#FFFFFF"/>
                 </LinearLayout>
 
                 <LinearLayout
