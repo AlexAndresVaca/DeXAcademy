@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -32,6 +33,7 @@ public class EA_ListarProfesores extends AppCompatActivity {
         obtenerDatosProfesor();
     }
 
+    // Volver a cargar datos despues del registro
     @Override
     protected void onRestart() {
         super.onRestart();
@@ -59,6 +61,28 @@ public class EA_ListarProfesores extends AppCompatActivity {
     public void abrirPantallaAgregarProfesor(View vista) {
         Intent pantallaAgregarPorfesor = new Intent(getApplicationContext(), EA_RegistrarProfesor.class);//Creando un Intent para invocar a Cliente Activity
         startActivity(pantallaAgregarPorfesor); //Iniciando la pantalla Clientes
+    }
+
+    public void buscarProfesor(View vista) {
+        String buscador = txtBuscarProfesor.getText().toString();
+        if (!buscador.equals("")) {
+            listaProfesores.clear();
+            datosProfesores = bdd.buscarProfesoresNombre(buscador);
+            if (datosProfesores != null) {
+                do {
+                    String id = datosProfesores.getString(0),
+                            nombre = datosProfesores.getString(2),
+                            apellido = datosProfesores.getString(1);
+                    listaProfesores.add(apellido + " " + nombre);
+                    ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaProfesores);
+                    lstProfesores.setAdapter(adapter);
+                } while (datosProfesores.moveToNext());
+            } else {
+                Toast.makeText(this, "No se encontraron registros", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            obtenerDatosProfesor();
+        }
     }
 
     public void cerrarSesion(View vista) {

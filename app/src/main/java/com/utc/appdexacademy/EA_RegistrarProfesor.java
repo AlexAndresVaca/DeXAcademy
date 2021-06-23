@@ -13,7 +13,7 @@ import android.widget.Toast;
 import java.util.regex.Pattern;
 
 public class EA_RegistrarProfesor extends AppCompatActivity {
-    EditText txtNombreRegistrarProfesor, txtApellidoRegistrarProfesor, txtEmailRegistrarProfesor, txtClaveRegistrarProfesor, txtTelefonoRegistrarProfesor;
+    EditText txtNombreRegistrarProfesor, txtApellidoRegistrarProfesor, txtEmailRegistrarProfesor, txtClaveRegistrarProfesor, txtClaveConfirmarRegistrarProfesor, txtTelefonoRegistrarProfesor;
     BaseDatos bdd;
 
     @Override
@@ -25,6 +25,7 @@ public class EA_RegistrarProfesor extends AppCompatActivity {
         txtApellidoRegistrarProfesor = findViewById(R.id.txtApellidoRegistrarProfesor);
         txtEmailRegistrarProfesor = findViewById(R.id.txtEmailRegistrarProfesor);
         txtClaveRegistrarProfesor = findViewById(R.id.txtClaveRegistrarProfesor);
+        txtClaveConfirmarRegistrarProfesor = findViewById(R.id.txtClaveConfirmarRegistrarProfesor);
         txtTelefonoRegistrarProfesor = findViewById(R.id.txtTelefonoRegistrarProfesor);
     }
 
@@ -33,6 +34,7 @@ public class EA_RegistrarProfesor extends AppCompatActivity {
                 apellido = txtApellidoRegistrarProfesor.getText().toString(),
                 correo = txtEmailRegistrarProfesor.getText().toString(),
                 clave = txtClaveRegistrarProfesor.getText().toString(),
+                claveConfirma = txtClaveConfirmarRegistrarProfesor.getText().toString(),
                 telefono = txtTelefonoRegistrarProfesor.getText().toString();
         int error = 0;
         // Validaciones
@@ -61,13 +63,19 @@ public class EA_RegistrarProfesor extends AppCompatActivity {
             txtTelefonoRegistrarProfesor.setError("Número de teléfono inválido");
             txtTelefonoRegistrarProfesor.requestFocus();
         }
+        if (!clave.equals(claveConfirma)) {
+            error++;
+            txtClaveConfirmarRegistrarProfesor.setError("Las contraseñas no coinciden");
+            txtClaveConfirmarRegistrarProfesor.setText("");
+            txtClaveConfirmarRegistrarProfesor.requestFocus();
+        }
         //
         if (error == 0) {
             // Almacenamos el registro
             try {
                 bdd.agregarUsuario(apellido, nombre, "profesor", correo, clave, telefono);
                 volverListarProfesores(null);
-                Toast.makeText(this, "Profesor registrado con éxito!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Profesor registrado co", Toast.LENGTH_SHORT).show();
             } catch (Exception ex) {
                 Toast.makeText(this, "Huston, tenemos un problema...", Toast.LENGTH_SHORT).show();
             }

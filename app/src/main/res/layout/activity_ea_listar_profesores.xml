@@ -165,7 +165,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:backgroundTint="#1E5F74"
-                            android:drawableTop="@android:drawable/ic_menu_search" />
+                            android:drawableTop="@android:drawable/ic_menu_search"
+                            android:onClick="buscarProfesor" />
 
                     </LinearLayout>
                 </LinearLayout>

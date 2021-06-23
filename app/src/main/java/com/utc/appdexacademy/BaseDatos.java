@@ -131,7 +131,24 @@ public class BaseDatos extends SQLiteOpenHelper {
     public Cursor listarProfesores() {
         SQLiteDatabase miBDD = getReadableDatabase(); //Llamando a la base de datos
         String sql = "select * from usuario " +
-                "WHERE tipo_usu = 'profesor' ";
+                "WHERE tipo_usu = 'profesor' " +
+                "ORDER BY apellido_usu ASC ;";
+        Cursor profesores = miBDD.rawQuery(sql, null);
+        if (profesores.moveToFirst()) {//verificando que el objeto usuario tenga resultados
+            return profesores; //retornamos datos encontrados
+        } else {
+            //Nose encuentra el usuario ..Porque no eexiste el email y congtrase{a
+            return null;
+        }
+    }
+
+    public Cursor buscarProfesoresNombre(String buscador) {
+        SQLiteDatabase miBDD = getReadableDatabase(); //Llamando a la base de datos
+        String sql = "select * from usuario " +
+                "WHERE tipo_usu = 'profesor' " +
+                "AND nombre_usu LIKE '%" + buscador + "%' " +
+                "OR apellido_usu LIKE '%" + buscador + "%' " +
+                "ORDER BY apellido_usu ASC ;";
         Cursor profesores = miBDD.rawQuery(sql, null);
         if (profesores.moveToFirst()) {//verificando que el objeto usuario tenga resultados
             return profesores; //retornamos datos encontrados
@@ -177,7 +194,7 @@ public class BaseDatos extends SQLiteOpenHelper {
                 "apellido_usu ='" + apellido + "', " +
                 "nombre_usu ='" + nombre + "', " +
                 "correo_usu ='" + correo + "', " +
-                "telefono_usu ='" + telefono + "', " +
+                "telefono_usu ='" + telefono + "' " +
                 "WHERE id_usu=" + id;
         if (miBdd != null) {
             miBdd.execSQL(sql);
@@ -191,7 +208,7 @@ public class BaseDatos extends SQLiteOpenHelper {
     public boolean acualizarClave(String id, String nuevaClave) {
         SQLiteDatabase miBdd = getWritableDatabase(); //objeto para manejar la base de datos
         String sql = "UPDATE usuario SET " +
-                "clave_usu ='" + nuevaClave + "', " +
+                "clave_usu ='" + nuevaClave + "' " +
                 "WHERE id_usu=" + id;
         if (miBdd != null) {
             miBdd.execSQL(sql);
