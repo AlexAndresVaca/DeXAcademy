@@ -86,6 +86,7 @@
                   android:layout_gravity="center_horizontal"
                   android:layout_marginBottom="10dp"
                   android:background="@drawable/bg_card_login2"
+                  android:onClick="abrirPantallaActualizarProfesor"
                   android:orientation="horizontal">
 
 
@@ -101,7 +102,6 @@
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:layout_gravity="center"
-                      android:onClick="abrirPantallaActualizarProfesor"
                       android:text="Perfil"
                       android:textColor="#FFFEFE"
                       android:textSize="26sp"
@@ -116,6 +116,7 @@
                   android:layout_gravity="center_horizontal"
                   android:layout_marginBottom="100dp"
                   android:background="@drawable/bg_card_login2"
+                  android:onClick="abrirPantallaGestionCurso"
                   android:orientation="horizontal">
 
 
@@ -131,7 +132,6 @@
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:layout_gravity="center"
-                      android:onClick="abrirPantallaGestionCurso"
                       android:text="Cursos"
                       android:textColor="#FFFFFF"
                       android:textSize="26sp"
@@ -139,14 +139,16 @@
 
 
               </LinearLayout>
+
               <LinearLayout
                   android:layout_width="match_parent"
                   android:layout_height="46dp"
+                  android:background="@drawable/bg_card_login2"
+                  android:onClick="cerrarSesion"
                   android:orientation="vertical"
                   android:paddingLeft="30dp"
                   android:paddingRight="30dp"
-                  android:translationZ="100dp"
-                  android:background="@drawable/bg_card_login2">
+                  android:translationZ="100dp">
 
 
                   <LinearLayout

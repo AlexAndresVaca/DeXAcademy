@@ -45,6 +45,7 @@ public class Login extends AppCompatActivity {
             infoUser = bdd.iniciarSesionUsuario(correo, clave);
             if (infoUser != null) {
                 // Comprobar si es un estudiante o profesor
+                String idUsu = infoUser.getString(0).toString();
                 String tipoUsu = infoUser.getString(3).toString();
 //                Si se desea mantener la sesion abierta
                 if (estadoSesion.isChecked()) {
@@ -57,6 +58,7 @@ public class Login extends AppCompatActivity {
                     //A traves del objeto editor establece la clave llamada estado sesion con un valor de 1
                     editor.putString("estadoSesion", "1");
                     editor.putString("tipoUsu", tipoUsu);
+                    editor.putString("idUsu", idUsu);
                     editor.commit(); //Guardando el SharedPreferences
                 }
 

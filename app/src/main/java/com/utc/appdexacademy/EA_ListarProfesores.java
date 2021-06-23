@@ -91,6 +91,7 @@ public class EA_ListarProfesores extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString("estadoSesion", "");
         editor.putString("tipoUsu", "");
+        editor.putString("idUsu", "");
         editor.commit();
         // Ir al login
         finish();
