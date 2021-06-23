@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppDeXAcademy">
-        <activity android:name=".EE_Estudiante_Cursos_Finalizados_Certificado"></activity>
+        <activity android:name=".EE_GestionarEstudiante_CambiarClave"></activity>
+        <activity android:name=".EE_Estudiante_Cursos_Finalizados_Certificado" />
         <activity android:name=".EE_Estudiante_Aceptado_Curso" />
         <activity android:name=".EE_Estudiante_Confirmar_Curso" />
         <activity android:name=".EE_Estudiante_Cursos_Finalizados" />

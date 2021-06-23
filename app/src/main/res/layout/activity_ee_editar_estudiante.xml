@@ -1,174 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EE_Editar_Estudiante">
 
-  <ScrollView
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:fillViewport="true">
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#1D2D50"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:fillViewport="true">
 
-
-      <LinearLayout
-          android:layout_width="339dp"
-          android:layout_height="120dp"
-          android:layout_gravity="center"
-          android:orientation="horizontal"
-          android:layout_marginTop="20dp"
-          android:layout_marginBottom="20dp">
-
-
-        <ImageView
-            android:id="@+id/imgEditarCliente"
-            android:layout_width="158dp"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/estudiante" />
-
-        <TextView
-            android:id="@+id/textEditar"
-            android:layout_width="180dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fontFamily="@font/roboto_slab"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="ESTUDIANTE"
-            android:textColor="#FFFDFD"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-      </LinearLayout>
-
-      <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:layout_margin="15dp"
-          android:background="@drawable/bg_card_login"
-          android:orientation="vertical"
-          android:paddingLeft="30dp"
-          android:paddingTop="25dp"
-          android:paddingRight="30dp"
-          android:translationZ="100dp">
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_slab"
-            android:gravity="center_horizontal"
-            android:text="MODIFICAR REGISTRO ESTUDIANTE"
-            android:textColor="#1D2D50"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="15dp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:background="#1D2D50"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="1dp">
 
 
-        <TextView
-            android:id="@+id/txtIdEstudianteEditar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Id"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/txtNombreEstudianteEditar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Ingrese su nombre"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/txtApellidoEstudianteEditar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Ingrese su apellido"
-            android:inputType="textPersonName" />
-
-        <EditText
-            android:id="@+id/txtEmailEstudianteEditar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Ingrese su dirección de correo"
-            android:inputType="textEmailAddress" />
-
-        <EditText
-            android:id="@+id/txtClaveEstudianteEditar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Ingrese una contraseña"
-            android:inputType="textPassword" />
-        <EditText
-            android:id="@+id/txtClaveConfirmarEstudianteEditar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Confirmar la contraseña"
-            android:inputType="textPassword" />
-
-        <EditText
-            android:id="@+id/txtTelefonoEstudianteEditar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:ems="10"
-            android:hint="Ingrese su número del telefono"
-            android:inputType="phone" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_marginBottom="40dp"
-            android:orientation="horizontal">
-
-          <android.widget.Button
-              android:id="@+id/btn_ActualizarEstudiante"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginEnd="5dp"
-              android:layout_weight="1"
-              android:background="@drawable/btncrear"
-              android:text="ACTUALIZAR"
-              android:textColor="#FFFFFF"
-              android:textColorHint="#5A2727"
-              app:backgroundTint="#6CBF3D" />
+            <LinearLayout
+                android:layout_width="339dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
 
 
+                <ImageView
+                    android:id="@+id/imgEditarCliente"
+                    android:layout_width="158dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/estudiante" />
+
+                <TextView
+                    android:id="@+id/textEditar"
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/roboto_slab"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="ESTUDIANTE"
+                    android:textColor="#FFFDFD"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:background="@drawable/bg_card_login"
+                android:orientation="vertical"
+                android:paddingLeft="30dp"
+                android:paddingTop="25dp"
+                android:paddingRight="30dp"
+                android:translationZ="100dp">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_slab"
+                    android:gravity="center_horizontal"
+                    android:text="MODIFICAR REGISTRO ESTUDIANTE"
+                    android:textColor="#1D2D50"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textoIdEstudianteEditar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ID "
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtIdEstudianteEditar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Id"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/txtNombreEstudianteEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Ingrese su nombre"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/txtApellidoEstudianteEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Ingrese su apellido"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/txtEmailEstudianteEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Ingrese su dirección de correo"
+                    android:inputType="textEmailAddress" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white_alter"
+                    android:onClick="abrirVentanaCambiarClave"
+                    android:text="Actualizar Contraseña"
+                    android:textColor="#000000"></Button>
+
+                <EditText
+                    android:id="@+id/txtTelefonoEstudianteEditar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:ems="10"
+                    android:hint="Ingrese su número del telefono"
+                    android:inputType="phone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_marginBottom="40dp"
+                    android:orientation="horizontal">
+
+                    <android.widget.Button
+                        android:id="@+id/btn_ActualizarEstudiante"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/btncrear"
+                        android:onClick="actualizarDatosEstudiante"
+                        android:text="ACTUALIZAR"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#5A2727"
+                        app:backgroundTint="#6CBF3D" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/btnVolverMenuEstudiante"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="volver"
+                        android:text="VOLVER"
+                        android:textColor="#FFFFFF"
+                        app:backgroundTint="#FFA812" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:orientation="vertical">
-
-          <Button
-              android:id="@+id/btnVolverMenuEstudiante"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:onClick="volverMenuProfesor"
-              android:text="VOLVER"
-              app:backgroundTint="#FFA812" />
-        </LinearLayout>
-      </LinearLayout>
-    </LinearLayout>
-  </ScrollView>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

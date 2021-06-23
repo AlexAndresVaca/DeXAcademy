@@ -106,7 +106,7 @@ public class EP_ActualizarRegistro extends AppCompatActivity {
             // Almacenamos el registro
             try {
 
-                bdd.actualizarProfesor(idProfesor, apellido, nombre, correo, telefono);
+                bdd.actualizarUsuario(idProfesor, apellido, nombre, correo, telefono);
                 volverMenuProfesor(null);
                 Toast.makeText(this, "Datos actualizados", Toast.LENGTH_SHORT).show();
             } catch (Exception ex) {

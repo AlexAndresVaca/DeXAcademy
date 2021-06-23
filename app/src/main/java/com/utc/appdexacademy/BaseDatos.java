@@ -62,7 +62,7 @@ public class BaseDatos extends SQLiteOpenHelper {
             "VALUES ('flores','hugo','profesor','hugo@gmail.com','hugo1234','0999999999');";
 
     private static final String usuAlu = "INSERT INTO usuario (apellido_usu, nombre_usu, tipo_usu, correo_usu, clave_usu, telefono_usu) " +
-            "VALUES ('cabas','luis','alumno','luis@gmail.com','luis1234','0999999999');";
+            "VALUES ('cabas','luis','estudiante','luis@gmail.com','luis1234','0999999999');";
 
     //CONSTRUCTOR
     public BaseDatos(Context contexto) {
@@ -169,7 +169,22 @@ public class BaseDatos extends SQLiteOpenHelper {
         }
     }
 
-    public boolean actualizarProfesor(String id, String apellido, String nombre, String correo, String telefono) {
+    public Cursor buscarEstudianteId(String idEstudiante) {
+        SQLiteDatabase miBDD = getReadableDatabase(); //Llamando a la base de datos
+        String sql = "select * from usuario " +
+                "WHERE tipo_usu = 'estudiante' " +
+                "AND id_usu = '" + idEstudiante + "' " +
+                "ORDER BY apellido_usu ASC ;";
+        Cursor profesores = miBDD.rawQuery(sql, null);
+        if (profesores.moveToFirst()) {//verificando que el objeto usuario tenga resultados
+            return profesores; //retornamos datos encontrados
+        } else {
+            //Nose encuentra el usuario ..Porque no eexiste el email y congtrase{a
+            return null;
+        }
+    }
+
+    public boolean actualizarUsuario(String id, String apellido, String nombre, String correo, String telefono) {
         SQLiteDatabase miBDD = getWritableDatabase();
         if (miBDD != null) {
             String sql = "UPDATE usuario SET " +

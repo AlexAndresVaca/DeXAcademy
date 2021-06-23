@@ -2,7 +2,11 @@ package com.utc.appdexacademy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 
 public class EE_Gestionar_Estudiante extends AppCompatActivity {
 
@@ -11,4 +15,28 @@ public class EE_Gestionar_Estudiante extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ee_gestionar_estudiante);
     }
+
+    public void verPerfilEstudiante(View vista) {
+        Intent irVerPerfilEstudiante = new Intent(getApplicationContext(), EE_Editar_Estudiante.class);
+        startActivity(irVerPerfilEstudiante);
+    }
+
+    public void verCursosEstudiante(View vista) {
+    }
+
+    public void cerrarSesion(View vista) {
+        // Borrar datos del sharepreferences
+        SharedPreferences prefs = getSharedPreferences("inicioSesion", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("estadoSesion", "");
+        editor.putString("tipoUsu", "");
+        editor.putString("idUsu", "");
+        editor.commit();
+        // Ir al login
+        finish();
+        Intent pantallaMenu = new Intent(getApplicationContext(), Login.class);
+        startActivity(pantallaMenu);
+    }
+
+
 }
