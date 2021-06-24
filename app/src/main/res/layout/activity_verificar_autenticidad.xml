@@ -129,7 +129,7 @@
                     android:fontFamily="@font/roboto_slab"
                     android:gravity="center"
                     android:hint="Esperando datos..."
-                    android:textColor="#000000"
+                    android:textColor="#FF9800"
                     android:textColorHint="#FF9800"
                     android:textSize="22sp" />
             </LinearLayout>
