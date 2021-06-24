@@ -10,7 +10,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//GMF2FUNWNX
 public class VerificarAutenticidad extends AppCompatActivity {
     EditText txtVerificarCertificado;
     TextView txtRespuesta;
