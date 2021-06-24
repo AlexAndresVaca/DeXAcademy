@@ -37,6 +37,7 @@ public class VerificarAutenticidad extends AppCompatActivity {
             } else {
                 txtRespuesta.setText("No se encontró el certificado resigtrado en DeX Academy.");
             }
+            txtVerificarCertificado.setText("");
         } catch (Exception ex) {
             Toast.makeText(this, "Huston, tenemos un problema...", Toast.LENGTH_SHORT).show();
         }
