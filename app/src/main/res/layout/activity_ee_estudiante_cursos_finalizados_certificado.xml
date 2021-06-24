@@ -5,195 +5,224 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EE_Estudiante_Cursos_Finalizados_Certificado">
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#1D2D50"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="220dp"
-        tools:layout_editor_absoluteY="210dp">
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:background="@drawable/bg_card_login"
-            android:orientation="vertical"
-            android:paddingLeft="30dp"
-            android:paddingTop="30dp"
-            android:paddingRight="30dp"
-            android:translationZ="100dp">
+            android:background="#1D2D50"
+            android:orientation="vertical">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="185dp"
-                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/bg_card_login"
                 android:orientation="vertical"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp">
+                android:paddingLeft="30dp"
+                android:paddingTop="30dp"
+                android:paddingRight="30dp"
+                android:translationZ="100dp">
 
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="168dp"
-                    android:layout_height="133dp"
-                    android:layout_gravity="center_horizontal|center_vertical"
-                    app:srcCompat="@drawable/buho" />
-
-                <TextView
-                    android:id="@+id/textView3"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:fontFamily="@font/roboto_slab"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="DeX Academy"
-                    android:textColor="#1D2D50"
-                    android:textSize="34sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="420dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView19"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="185dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/roboto_slab_bold"
+                    android:layout_marginBottom="20dp"
                     android:gravity="center"
-                    android:text="Certifica que"
-                    android:textColor="#1D2D50"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView20"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/arizonia"
-                    android:gravity="center"
-                    android:hint="Nombre del estudiante"
-                    android:textColor="#FFA812"
-                    android:textColorHint="#FFA812"
-                    android:textSize="28sp" />
-
-                <TextView
-                    android:id="@+id/textView21"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/roboto_slab_bold"
-                    android:gravity="center"
-                    android:text="Ha completado satisfactoriamente"
-                    android:textColor="#1D2D50"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView22"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center"
-                    android:hint="Nombre del curso"
-                    android:textColor="#1D2D50"
-                    android:textColorHint="#1D2D50"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/textView24"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/roboto_slab_bold"
-                    android:gravity="center"
-                    android:text="Con una duración de"
-                    android:textColor="#1D2D50"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView23"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="40dp"
-                    android:gravity="center"
-                    android:hint="40 horas"
-                    android:textColor="#1D2D50"
-                    android:textColorHint="#1D2D50"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/textView29"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/arizonia"
-                    android:gravity="center"
-                    android:hint="Nombre del profesor"
-                    android:textColor="#FFA812"
-                    android:textColorHint="#FFA812"
-                    android:textSize="28sp" />
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#1D2D50"
-                    android:orientation="vertical"></LinearLayout>
-
-                <TextView
-                    android:id="@+id/textView28"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:fontFamily="@font/roboto_slab_bold"
-                    android:gravity="center"
-                    android:text="Profesor"
-                    android:textColor="#1D2D50"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:layout_width="199dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp">
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="168dp"
+                        android:layout_height="133dp"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        app:srcCompat="@drawable/buho" />
 
                     <TextView
-                        android:id="@+id/textView26"
-                        android:layout_width="77dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:fontFamily="@font/roboto_slab_bold"
-                        android:gravity="end"
-                        android:text="Fecha: "
+                        android:id="@+id/textView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:fontFamily="@font/roboto_slab"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="DeX Academy"
                         android:textColor="#1D2D50"
-                        android:textColorHint="#1D2D50"
-                        android:textSize="16sp"
+                        android:textSize="34sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/roboto_slab_bold"
+                        android:gravity="center"
+                        android:text="Certifica que"
+                        android:textColor="#1D2D50"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView25"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/txtNombreEstudiante"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
-                        android:fontFamily="@font/roboto_slab_bold"
-                        android:hint="23/05/2021"
+                        android:fontFamily="@font/arizonia"
+                        android:gravity="center"
+                        android:hint="Nombre del estudiante"
                         android:textColor="#FFA812"
                         android:textColorHint="#FFA812"
-                        android:textSize="16sp" />
+                        android:textSize="40sp" />
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/roboto_slab_bold"
+                        android:gravity="center"
+                        android:text="Ha completado satisfactoriamente el curso de:"
+                        android:textColor="#1D2D50"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtNombreCurso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:hint="Nombre del curso"
+                        android:textColor="#1D2D50"
+                        android:textColorHint="#1D2D50"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/textView24"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/roboto_slab_bold"
+                        android:gravity="center"
+                        android:text="Con una duración de"
+                        android:textColor="#1D2D50"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtDuracionCurso"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:gravity="center"
+                        android:hint="40 horas"
+                        android:textColor="#1D2D50"
+                        android:textColorHint="#1D2D50"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/txtNombreProfesor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/arizonia"
+                        android:gravity="center"
+                        android:hint="Nombre del profesor"
+                        android:textColor="#FFA812"
+                        android:textColorHint="#FFA812"
+                        android:textSize="40sp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1D2D50"
+                        android:orientation="vertical"></LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/roboto_slab_bold"
+                        android:gravity="center"
+                        android:text="Profesor de DeX Academy"
+                        android:textColor="#1D2D50"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="199dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView26"
+                            android:layout_width="77dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/roboto_slab_bold"
+                            android:gravity="end"
+                            android:text="COD: "
+                            android:textColor="#1D2D50"
+                            android:textColorHint="#1D2D50"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtCodCurso"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="@font/roboto_slab_bold"
+                            android:hint="XXXXXXXXXX"
+                            android:textColor="#FFA812"
+                            android:textColorHint="#FFA812"
+                            android:textIsSelectable="true"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center">
+
+                <android.widget.Button
+                    android:id="@+id/button2"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/bt_login"
+                    android:onClick="volverMenu"
+                    android:text="Volver"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

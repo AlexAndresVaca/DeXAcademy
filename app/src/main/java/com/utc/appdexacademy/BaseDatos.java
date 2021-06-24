@@ -434,8 +434,43 @@ public class BaseDatos extends SQLiteOpenHelper {
     // ESTUDIANTE - CURSOS
     public Cursor buscarCursosDelEstudiante(String idEstudiante) {
         SQLiteDatabase miBDD = getReadableDatabase();
-        String sql = "SELECT * FROM curso " +
-                "WHERE fk_id_usu = '" + idEstudiante + "' " +
+        String sql = "SELECT * FROM inscripcion " +
+                "INNER JOIN curso " +
+                "ON inscripcion.fk_id_cur = curso.id_cur " +
+                "WHERE inscripcion.fk_id_alu = '" + idEstudiante + "' " +
+                "ORDER BY nombre_cur ASC;";
+        if (miBDD != null) {
+            Cursor cursos = miBDD.rawQuery(sql, null);
+            if (cursos.moveToFirst()) {
+                return cursos;
+            }
+        }
+        return null;
+    }
+
+    public Cursor buscarCursosDelEstudiantePorNombre(String idEstudiante, String nombre) {
+        SQLiteDatabase miBDD = getReadableDatabase();
+        String sql = "SELECT * FROM inscripcion " +
+                "INNER JOIN curso " +
+                "ON inscripcion.fk_id_cur = curso.id_cur " +
+                "WHERE inscripcion.fk_id_alu = '" + idEstudiante + "' " +
+                "AND nombre_cur LIKE '%" + nombre + "%' " +
+                "ORDER BY nombre_cur ASC;";
+        if (miBDD != null) {
+            Cursor cursos = miBDD.rawQuery(sql, null);
+            if (cursos.moveToFirst()) {
+                return cursos;
+            }
+        }
+        return null;
+    }
+
+    public Cursor buscarInscripcionCurso(String id) {
+        SQLiteDatabase miBDD = getReadableDatabase();
+        String sql = "SELECT * FROM inscripcion " +
+                "INNER JOIN curso " +
+                "ON inscripcion.fk_id_cur = curso.id_cur " +
+                "WHERE id_ins = '" + id + "' " +
                 "ORDER BY nombre_cur ASC;";
         if (miBDD != null) {
             Cursor cursos = miBDD.rawQuery(sql, null);
@@ -471,6 +506,91 @@ public class BaseDatos extends SQLiteOpenHelper {
             }
         }
         return null;
+    }
+
+    public Cursor buscarInscripcionId(String idInscripcion) {
+        SQLiteDatabase miBDD = getReadableDatabase();
+        String sql = "select * from usuario " +
+                "inner join curso " +
+                "on usuario.id_usu = curso.fk_id_usu  " +
+                "inner join inscripcion " +
+                "on curso.id_cur = inscripcion.fk_id_cur " +
+                "inner join usuario as estudiante " +
+                "on estudiante.id_usu = inscripcion.fk_id_alu " +
+                "where inscripcion.id_ins = '" + idInscripcion + "'; ";
+        if (miBDD != null) {
+            Cursor cursos = miBDD.rawQuery(sql, null);
+            if (cursos.moveToFirst()) {
+                return cursos;
+            }
+        }
+        return null;
+    }
+
+    public Cursor listarEstudiantesEnCurso(String idCurso) {
+        SQLiteDatabase miBDD = getReadableDatabase();
+        String sql = "SELECT  * FROM curso " +
+                "INNER JOIN inscripcion " +
+                "ON curso.id_cur = inscripcion.fk_id_cur " +
+                "INNER JOIN usuario as estudiante " +
+                "ON fk_id_alu = estudiante.id_usu " +
+                "WHERE curso.id_cur = " + idCurso + " " +
+                "ORDER BY estudiante.apellido_usu ASC";
+        if (miBDD != null) {
+            Cursor cursos = miBDD.rawQuery(sql, null);
+            if (cursos.moveToFirst()) {
+                return cursos;
+            }
+        }
+        return null;
+    }
+
+    public Cursor listarEstudiantesEnCursoNombreEstudiante(String idCurso, String buscar) {
+        SQLiteDatabase miBDD = getReadableDatabase();
+        String sql = "SELECT  * FROM curso " +
+                "INNER JOIN inscripcion " +
+                "ON curso.id_cur = inscripcion.fk_id_cur " +
+                "INNER JOIN usuario as estudiante " +
+                "ON fk_id_alu = estudiante.id_usu " +
+                "WHERE curso.id_cur = " + idCurso + " " +
+                "AND (estudiante.apellido_usu LIKE '%" + buscar + "%' " +
+                "OR estudiante.nombre_usu LIKE '%" + buscar + "%') " +
+                "ORDER BY estudiante.apellido_usu ASC";
+        if (miBDD != null) {
+            Cursor cursos = miBDD.rawQuery(sql, null);
+            if (cursos.moveToFirst()) {
+                return cursos;
+            }
+        }
+        return null;
+    }
+
+    public boolean darCertificado(String idInscripcion) {
+        SQLiteDatabase miBdd = getWritableDatabase();
+        String sql = "UPDATE inscripcion " +
+                "SET  estado_progreso_ins = 'finalizado'" +
+                "WHERE id_ins = " + idInscripcion + " ;";
+        if (miBdd != null) {
+            miBdd.execSQL(sql);
+            miBdd.close();
+            return true;
+        }
+        return false;
+    }
+
+    public Cursor buscarCertificado(String codigo) {
+        SQLiteDatabase miBDD = getReadableDatabase();
+        String sql = "SELECT * FROM INSCRIPCION " +
+                "WHERE codigo_unico_ins = '" + codigo + "' " +
+                "AND estado_progreso_ins = 'finalizado'; ";
+        if (miBDD != null) {
+            Cursor certificado = miBDD.rawQuery(sql, null);
+            if (certificado.moveToFirst()) {
+                return certificado;
+            }
+        }
+        return null;
+
     }
 }
 

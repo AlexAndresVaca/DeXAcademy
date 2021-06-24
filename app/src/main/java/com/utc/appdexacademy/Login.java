@@ -93,7 +93,7 @@ public class Login extends AppCompatActivity {
 
     //Metodo para abrir la pantalla de Recuperar contraseña alumno
     public void abrirPantallaRecuperarContrasena(View vista) {
-        Intent pantallaRecuperarContrasena = new Intent(getApplicationContext(), Registro_RecuperarContrasena.class);//Creando un Intent para invocar a Cliente Activity
+        Intent pantallaRecuperarContrasena = new Intent(getApplicationContext(), VerificarAutenticidad.class);//Creando un Intent para invocar a Cliente Activity
         startActivity(pantallaRecuperarContrasena); //Iniciando la pantalla Clientes
     }
     // Metodos

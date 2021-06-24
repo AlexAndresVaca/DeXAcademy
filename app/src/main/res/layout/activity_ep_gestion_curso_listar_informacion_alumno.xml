@@ -108,11 +108,19 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:backgroundTint="#1E5F74"
-                            android:drawableTop="@android:drawable/ic_menu_search" />
+                            android:drawableTop="@android:drawable/ic_menu_search"
+                            android:onClick="buscarEstudianteCurso" />
 
                     </LinearLayout>
                 </LinearLayout>
 
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="* Para generar un certificado elija un estudiante y mantenga presionado, luego confirme la acción." />
 
                 <TextView
                     android:id="@+id/textView7"
@@ -146,7 +154,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp"
+                        android:onClick="volver"
                         android:text="VOLVER"
+                        android:textColor="#FFFFFF"
                         app:backgroundTint="#FFA812" />
                 </LinearLayout>
 

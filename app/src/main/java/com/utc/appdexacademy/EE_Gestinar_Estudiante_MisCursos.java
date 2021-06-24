@@ -100,6 +100,11 @@ public class EE_Gestinar_Estudiante_MisCursos extends AppCompatActivity {
         });
     }
 
+    public void irCursosEnProceso(View vista) {
+        Intent verCursosEnProceso = new Intent(getApplicationContext(), EE_Estudiante_Cursos_en_Proceso.class);
+        startActivity(verCursosEnProceso);
+    }
+
     public void volver(View vista) {
         finish();
     }

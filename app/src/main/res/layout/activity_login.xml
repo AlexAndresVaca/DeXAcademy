@@ -165,12 +165,12 @@
                     <TextView
                         android:id="@+id/noTienesCuenta"
                         android:layout_width="222dp"
-                        android:layout_height="34dp"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center|center_horizontal"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:onClick="abrirPantallaRecuperarContrasena"
-                        android:text="¿Olvidaste tu contraseña? "
+                        android:text="¿Deseas verificar un certificado? "
                         android:textColor="#000000"
                         android:textSize="16dp" />
 

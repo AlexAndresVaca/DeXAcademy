@@ -5,7 +5,7 @@
     android:id="@+id/txtNuevaContrasenaRecuperar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registro_RecuperarContrasena">
+    tools:context=".VerificarAutenticidad">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
                 android:id="@+id/imgEditarCliente"
                 android:layout_width="158dp"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/estudiante" />
+                app:srcCompat="@drawable/listacursos" />
 
             <TextView
                 android:id="@+id/textEditar"
@@ -35,7 +35,7 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/roboto_slab"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="ALUMNO"
+                android:text="CERTIFICADOS"
                 android:textColor="#FFFDFD"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -59,7 +59,7 @@
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/roboto_slab"
                 android:gravity="center_horizontal"
-                android:text="RECUPERAR CONTRASEÑA"
+                android:text="VERIFICA CERTIFICADOS DEX"
                 android:textColor="#1D2D50"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -70,59 +70,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Ingrese su nombre completo:"
+                android:text="Ingresa el código del certificado:"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/txtNombreRecuperarContraseña"
+                android:id="@+id/txtVerificarCertificado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:ems="10"
-                android:hint="Ingrese su nombre"
-                android:inputType="textPersonName" />
-
-            <TextView
-                android:id="@+id/textViewcontrasenanueva"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:text="Ingrese la contraseña nueva:"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/txtContrasenaNuevaRecuperarContrasena"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:ems="10"
-                android:hint="Ingrese la contraseña nueva"
-                android:inputType="textPersonName" />
-            <TextView
-                android:id="@+id/textViewcontrasenaconfirme"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:text="Confirme la nueva contraseña:"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/txtContrasenaConfirmarRecuperarContrasena"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:ems="10"
-                android:hint="Confirmar la contraseña"
+                android:hint="XXXXXXXXXX"
                 android:inputType="textPersonName" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
-                android:layout_marginBottom="80dp"
+                android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
                 <android.widget.Button
@@ -132,26 +97,45 @@
                     android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/btncrear"
-                    android:text="CAMBIAR"
+                    android:onClick="verificarCertificado"
+                    android:text="consultar"
                     android:textColor="#FFFFFF"
                     android:textColorHint="#5A2727"
                     app:backgroundTint="#6CBF3D" />
 
 
-                <android.widget.Button
-                    android:id="@+id/btn_CancelarRecuperarContrasena"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/btncancelar"
-                    android:text="CANCELAR"
-                    android:textColor="#FFFFFF"
-                    app:backgroundTint="#FFFEFE" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="250dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20sp"
+                    android:fontFamily="@font/roboto_slab_bold"
+                    android:text="Resultados de la búsqueda:"
+                    android:textColor="@color/primary_principal"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/txtRespuesta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20sp"
+                    android:fontFamily="@font/roboto_slab"
+                    android:gravity="center"
+                    android:hint="Esperando datos..."
+                    android:textColor="#000000"
+                    android:textColorHint="#FF9800"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:orientation="vertical">

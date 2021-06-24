@@ -66,6 +66,13 @@ public class EP_GestionCurso_Listar_MostrarInformacion extends AppCompatActivity
         startActivity(editarCursosProfesor);
     }
 
+    public void abrirListaEstudiantes(View vista) {
+        Intent listaEstudiantes = new Intent(getApplicationContext(), EP_GestionCurso_Listar_InformacionAlumno.class);
+        finish();
+        listaEstudiantes.putExtra("idCurso", idCursoVer);
+        startActivity(listaEstudiantes);
+    }
+
     public void cerrar(View vista) {
         Intent volverListarCursos = new Intent(getApplicationContext(), EP_GestionCurso.class);
         finish();
